@@ -1,0 +1,17 @@
+[project]
+name = "hw1"
+version = "0.1.0"
+description = "HW1 TVDSL: регулярные выражения токенов Funny → НКА → ДКА → минимальный ДКА"
+readme = "README.md"
+authors = [
+    { name = "Ivan Shebanov", email = "vanamokanov8@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+hw1 = "hw1:main"
+
+[build-system]
+requires = ["uv_build>=0.12.17,<0.13.0"]
+build-backend = "uv_build"
