@@ -1,0 +1,1136 @@
+[
+ {
+  "input": "",
+  "expected": "",
+  "got": "",
+  "status": "PASS"
+ },
+ {
+  "input": "     ",
+  "expected": "",
+  "got": "",
+  "status": "PASS"
+ },
+ {
+  "input": "\t\t\t",
+  "expected": "",
+  "got": "",
+  "status": "PASS"
+ },
+ {
+  "input": "\r\n\r\n",
+  "expected": "",
+  "got": "",
+  "status": "PASS"
+ },
+ {
+  "input": " \t\r\n \n\t ",
+  "expected": "",
+  "got": "",
+  "status": "PASS"
+ },
+ {
+  "input": "0",
+  "expected": "INT",
+  "got": "INT",
+  "status": "PASS"
+ },
+ {
+  "input": "00",
+  "expected": "BAD_INT",
+  "got": "BAD_INT",
+  "status": "PASS"
+ },
+ {
+  "input": "01",
+  "expected": "BAD_INT",
+  "got": "BAD_INT",
+  "status": "PASS"
+ },
+ {
+  "input": "0 0",
+  "expected": "INT INT",
+  "got": "INT INT",
+  "status": "PASS"
+ },
+ {
+  "input": "7 10 100 2147483648",
+  "expected": "INT INT INT INT",
+  "got": "INT INT INT INT",
+  "status": "PASS"
+ },
+ {
+  "input": "-5",
+  "expected": "MINUS INT",
+  "got": "MINUS INT",
+  "status": "PASS"
+ },
+ {
+  "input": "12abc",
+  "expected": "INT IDENT",
+  "got": "INT IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "x",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "_",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "_tmp is_sorted __init__ x_1 a1b2",
+  "expected": "IDENT IDENT IDENT IDENT IDENT",
+  "got": "IDENT IDENT IDENT IDENT IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "function",
+  "expected": "KW_FUNCTION",
+  "got": "KW_FUNCTION",
+  "status": "PASS"
+ },
+ {
+  "input": "returns",
+  "expected": "KW_RETURNS",
+  "got": "KW_RETURNS",
+  "status": "PASS"
+ },
+ {
+  "input": "while",
+  "expected": "KW_WHILE",
+  "got": "KW_WHILE",
+  "status": "PASS"
+ },
+ {
+  "input": "if",
+  "expected": "KW_IF",
+  "got": "KW_IF",
+  "status": "PASS"
+ },
+ {
+  "input": "else",
+  "expected": "KW_ELSE",
+  "got": "KW_ELSE",
+  "status": "PASS"
+ },
+ {
+  "input": "assert",
+  "expected": "KW_ASSERT",
+  "got": "KW_ASSERT",
+  "status": "PASS"
+ },
+ {
+  "input": "assume",
+  "expected": "KW_ASSUME",
+  "got": "KW_ASSUME",
+  "status": "PASS"
+ },
+ {
+  "input": "invariant",
+  "expected": "KW_INVARIANT",
+  "got": "KW_INVARIANT",
+  "status": "PASS"
+ },
+ {
+  "input": "length",
+  "expected": "KW_LENGTH",
+  "got": "KW_LENGTH",
+  "status": "PASS"
+ },
+ {
+  "input": "requires ensures uses int true false not and or forall exists",
+  "expected": "KW_REQUIRES KW_ENSURES KW_USES KW_INT KW_TRUE KW_FALSE KW_NOT KW_AND KW_OR KW_FORALL KW_EXISTS",
+  "got": "KW_REQUIRES KW_ENSURES KW_USES KW_INT KW_TRUE KW_FALSE KW_NOT KW_AND KW_OR KW_FORALL KW_EXISTS",
+  "status": "PASS"
+ },
+ {
+  "input": "iff functions lengthy if1 while_ IF Function",
+  "expected": "IDENT IDENT IDENT IDENT IDENT IDENT IDENT",
+  "got": "IDENT IDENT IDENT IDENT IDENT IDENT IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "functio retur i",
+  "expected": "IDENT IDENT IDENT",
+  "got": "IDENT IDENT IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "if(x)",
+  "expected": "KW_IF LPAREN IDENT RPAREN",
+  "got": "KW_IF LPAREN IDENT RPAREN",
+  "status": "PASS"
+ },
+ {
+  "input": "else if elseif",
+  "expected": "KW_ELSE KW_IF IDENT",
+  "got": "KW_ELSE KW_IF IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "()[]{},;",
+  "expected": "LPAREN RPAREN LBRACKET RBRACKET LBRACE RBRACE COMMA SEMI",
+  "got": "LPAREN RPAREN LBRACKET RBRACKET LBRACE RBRACE COMMA SEMI",
+  "status": "PASS"
+ },
+ {
+  "input": "+ - * / == != <= >= < > =",
+  "expected": "PLUS MINUS STAR SLASH EQ NE LE GE LT GT ASSIGN",
+  "got": "PLUS MINUS STAR SLASH EQ NE LE GE LT GT ASSIGN",
+  "status": "PASS"
+ },
+ {
+  "input": "a<=b>=c==d!=e",
+  "expected": "IDENT LE IDENT GE IDENT EQ IDENT NE IDENT",
+  "got": "IDENT LE IDENT GE IDENT EQ IDENT NE IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "===",
+  "expected": "EQ ASSIGN",
+  "got": "EQ ASSIGN",
+  "status": "PASS"
+ },
+ {
+  "input": "<==",
+  "expected": "LE ASSIGN",
+  "got": "LE ASSIGN",
+  "status": "PASS"
+ },
+ {
+  "input": "=<",
+  "expected": "ASSIGN LT",
+  "got": "ASSIGN LT",
+  "status": "PASS"
+ },
+ {
+  "input": "!x",
+  "expected": "ERROR IDENT",
+  "got": "ERROR IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": ": | -> =>",
+  "expected": "COLON PIPE ARROW FATARROW",
+  "got": "COLON PIPE ARROW FATARROW",
+  "status": "PASS"
+ },
+ {
+  "input": "-->",
+  "expected": "MINUS ARROW",
+  "got": "MINUS ARROW",
+  "status": "PASS"
+ },
+ {
+  "input": "a:int, b:int[]",
+  "expected": "IDENT COLON KW_INT COMMA IDENT COLON KW_INT LBRACKET RBRACKET",
+  "got": "IDENT COLON KW_INT COMMA IDENT COLON KW_INT LBRACKET RBRACKET",
+  "status": "PASS"
+ },
+ {
+  "input": "// comment",
+  "expected": "",
+  "got": "",
+  "status": "PASS"
+ },
+ {
+  "input": "//",
+  "expected": "",
+  "got": "",
+  "status": "PASS"
+ },
+ {
+  "input": "x = 1; // set x",
+  "expected": "IDENT ASSIGN INT SEMI",
+  "got": "IDENT ASSIGN INT SEMI",
+  "status": "PASS"
+ },
+ {
+  "input": "a // b\nc",
+  "expected": "IDENT IDENT",
+  "got": "IDENT IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "a // b\r\nc",
+  "expected": "IDENT IDENT",
+  "got": "IDENT IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "x//y",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "a / b // c / d",
+  "expected": "IDENT SLASH IDENT",
+  "got": "IDENT SLASH IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "/ /",
+  "expected": "SLASH SLASH",
+  "got": "SLASH SLASH",
+  "status": "PASS"
+ },
+ {
+  "input": "foo @ 42",
+  "expected": "IDENT ERROR INT",
+  "got": "IDENT ERROR INT",
+  "status": "PASS"
+ },
+ {
+  "input": "1.5",
+  "expected": "INT ERROR INT",
+  "got": "INT ERROR INT",
+  "status": "PASS"
+ },
+ {
+  "input": "\"s\"",
+  "expected": "ERROR IDENT ERROR",
+  "got": "ERROR IDENT ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "x = é;",
+  "expected": "IDENT ASSIGN ERROR SEMI",
+  "got": "IDENT ASSIGN ERROR SEMI",
+  "status": "PASS"
+ },
+ {
+  "input": "a → b",
+  "expected": "IDENT ERROR IDENT",
+  "got": "IDENT ERROR IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "// é",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "привет",
+  "expected": "ERROR ERROR ERROR ERROR ERROR ERROR",
+  "got": "ERROR ERROR ERROR ERROR ERROR ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "function f(x, y) returns r { r = x + y; // comment\n if (r > 0) { assert r == x + y; } }",
+  "expected": "KW_FUNCTION IDENT LPAREN IDENT COMMA IDENT RPAREN KW_RETURNS IDENT LBRACE IDENT ASSIGN IDENT PLUS IDENT SEMI KW_IF LPAREN IDENT GT INT RPAREN LBRACE KW_ASSERT IDENT EQ IDENT PLUS IDENT SEMI RBRACE RBRACE",
+  "got": "KW_FUNCTION IDENT LPAREN IDENT COMMA IDENT RPAREN KW_RETURNS IDENT LBRACE IDENT ASSIGN IDENT PLUS IDENT SEMI KW_IF LPAREN IDENT GT INT RPAREN LBRACE KW_ASSERT IDENT EQ IDENT PLUS IDENT SEMI RBRACE RBRACE",
+  "status": "PASS"
+ },
+ {
+  "input": "setdiag(a:int[]) returns b:int[] {\n  b = a;\n  b[0] = 1;\n}",
+  "expected": "IDENT LPAREN IDENT COLON KW_INT LBRACKET RBRACKET RPAREN KW_RETURNS IDENT COLON KW_INT LBRACKET RBRACKET LBRACE IDENT ASSIGN IDENT SEMI IDENT LBRACKET INT RBRACKET ASSIGN INT SEMI RBRACE",
+  "got": "IDENT LPAREN IDENT COLON KW_INT LBRACKET RBRACKET RPAREN KW_RETURNS IDENT COLON KW_INT LBRACKET RBRACKET LBRACE IDENT ASSIGN IDENT SEMI IDENT LBRACKET INT RBRACKET ASSIGN INT SEMI RBRACE",
+  "status": "PASS"
+ },
+ {
+  "input": "forall (k:int | k >= 0)",
+  "expected": "KW_FORALL LPAREN IDENT COLON KW_INT PIPE IDENT GE INT RPAREN",
+  "got": "KW_FORALL LPAREN IDENT COLON KW_INT PIPE IDENT GE INT RPAREN",
+  "status": "PASS"
+ },
+ {
+  "input": "\u0000",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\u0001",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\u0002",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\u0003",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\u0004",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\u0005",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\u0006",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\u0007",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\b",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\t",
+  "expected": "",
+  "got": "",
+  "status": "PASS"
+ },
+ {
+  "input": "\n",
+  "expected": "",
+  "got": "",
+  "status": "PASS"
+ },
+ {
+  "input": "\u000b",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\f",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\r",
+  "expected": "",
+  "got": "",
+  "status": "PASS"
+ },
+ {
+  "input": "\u000e",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\u000f",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\u0010",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\u0011",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\u0012",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\u0013",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\u0014",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\u0015",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\u0016",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\u0017",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\u0018",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\u0019",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\u001a",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\u001b",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\u001c",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\u001d",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\u001e",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\u001f",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": " ",
+  "expected": "",
+  "got": "",
+  "status": "PASS"
+ },
+ {
+  "input": "!",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "\"",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "#",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "$",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "%",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "&",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "'",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "(",
+  "expected": "LPAREN",
+  "got": "LPAREN",
+  "status": "PASS"
+ },
+ {
+  "input": ")",
+  "expected": "RPAREN",
+  "got": "RPAREN",
+  "status": "PASS"
+ },
+ {
+  "input": "*",
+  "expected": "STAR",
+  "got": "STAR",
+  "status": "PASS"
+ },
+ {
+  "input": "+",
+  "expected": "PLUS",
+  "got": "PLUS",
+  "status": "PASS"
+ },
+ {
+  "input": ",",
+  "expected": "COMMA",
+  "got": "COMMA",
+  "status": "PASS"
+ },
+ {
+  "input": "-",
+  "expected": "MINUS",
+  "got": "MINUS",
+  "status": "PASS"
+ },
+ {
+  "input": ".",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "/",
+  "expected": "SLASH",
+  "got": "SLASH",
+  "status": "PASS"
+ },
+ {
+  "input": "0",
+  "expected": "INT",
+  "got": "INT",
+  "status": "PASS"
+ },
+ {
+  "input": "1",
+  "expected": "INT",
+  "got": "INT",
+  "status": "PASS"
+ },
+ {
+  "input": "2",
+  "expected": "INT",
+  "got": "INT",
+  "status": "PASS"
+ },
+ {
+  "input": "3",
+  "expected": "INT",
+  "got": "INT",
+  "status": "PASS"
+ },
+ {
+  "input": "4",
+  "expected": "INT",
+  "got": "INT",
+  "status": "PASS"
+ },
+ {
+  "input": "5",
+  "expected": "INT",
+  "got": "INT",
+  "status": "PASS"
+ },
+ {
+  "input": "6",
+  "expected": "INT",
+  "got": "INT",
+  "status": "PASS"
+ },
+ {
+  "input": "7",
+  "expected": "INT",
+  "got": "INT",
+  "status": "PASS"
+ },
+ {
+  "input": "8",
+  "expected": "INT",
+  "got": "INT",
+  "status": "PASS"
+ },
+ {
+  "input": "9",
+  "expected": "INT",
+  "got": "INT",
+  "status": "PASS"
+ },
+ {
+  "input": ":",
+  "expected": "COLON",
+  "got": "COLON",
+  "status": "PASS"
+ },
+ {
+  "input": ";",
+  "expected": "SEMI",
+  "got": "SEMI",
+  "status": "PASS"
+ },
+ {
+  "input": "<",
+  "expected": "LT",
+  "got": "LT",
+  "status": "PASS"
+ },
+ {
+  "input": "=",
+  "expected": "ASSIGN",
+  "got": "ASSIGN",
+  "status": "PASS"
+ },
+ {
+  "input": ">",
+  "expected": "GT",
+  "got": "GT",
+  "status": "PASS"
+ },
+ {
+  "input": "?",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "@",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "A",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "B",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "C",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "D",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "E",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "F",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "G",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "H",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "I",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "J",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "K",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "L",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "M",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "N",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "O",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "P",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "Q",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "R",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "S",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "T",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "U",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "V",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "W",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "X",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "Y",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "Z",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "[",
+  "expected": "LBRACKET",
+  "got": "LBRACKET",
+  "status": "PASS"
+ },
+ {
+  "input": "\\",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "]",
+  "expected": "RBRACKET",
+  "got": "RBRACKET",
+  "status": "PASS"
+ },
+ {
+  "input": "^",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "_",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "`",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "a",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "b",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "c",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "d",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "e",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "f",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "g",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "h",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "i",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "j",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "k",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "l",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "m",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "n",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "o",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "p",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "q",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "r",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "s",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "t",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "u",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "v",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "w",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "x",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "y",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "z",
+  "expected": "IDENT",
+  "got": "IDENT",
+  "status": "PASS"
+ },
+ {
+  "input": "{",
+  "expected": "LBRACE",
+  "got": "LBRACE",
+  "status": "PASS"
+ },
+ {
+  "input": "|",
+  "expected": "PIPE",
+  "got": "PIPE",
+  "status": "PASS"
+ },
+ {
+  "input": "}",
+  "expected": "RBRACE",
+  "got": "RBRACE",
+  "status": "PASS"
+ },
+ {
+  "input": "~",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "é",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "Ж",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": "→",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ },
+ {
+  "input": " ",
+  "expected": "ERROR",
+  "got": "ERROR",
+  "status": "PASS"
+ }
+]
