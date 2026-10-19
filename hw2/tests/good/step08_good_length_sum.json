@@ -1,0 +1,92 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "function",
+      "name": "sum2",
+      "params": [
+        {
+          "name": "a",
+          "type": "int[]"
+        }
+      ],
+      "requires": {
+        "node": "binop",
+        "op": ">=",
+        "left": {
+          "node": "call",
+          "name": "length",
+          "args": [
+            {
+              "node": "var",
+              "name": "a"
+            }
+          ]
+        },
+        "right": {
+          "node": "int",
+          "value": 2
+        }
+      },
+      "returns": [
+        {
+          "name": "r",
+          "type": "int"
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "r"
+            ],
+            "value": {
+              "node": "binop",
+              "op": "+",
+              "left": {
+                "node": "index",
+                "array": {
+                  "node": "var",
+                  "name": "a"
+                },
+                "index": {
+                  "node": "int",
+                  "value": 0
+                }
+              },
+              "right": {
+                "node": "index",
+                "array": {
+                  "node": "var",
+                  "name": "a"
+                },
+                "index": {
+                  "node": "binop",
+                  "op": "-",
+                  "left": {
+                    "node": "call",
+                    "name": "length",
+                    "args": [
+                      {
+                        "node": "var",
+                        "name": "a"
+                      }
+                    ]
+                  },
+                  "right": {
+                    "node": "int",
+                    "value": 1
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

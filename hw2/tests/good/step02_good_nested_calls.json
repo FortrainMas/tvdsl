@@ -1,0 +1,138 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "function",
+      "name": "add",
+      "params": [
+        {
+          "name": "a",
+          "type": "int"
+        },
+        {
+          "name": "b",
+          "type": "int"
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "r",
+          "type": "int"
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "r"
+            ],
+            "value": {
+              "node": "binop",
+              "op": "+",
+              "left": {
+                "node": "var",
+                "name": "a"
+              },
+              "right": {
+                "node": "var",
+                "name": "b"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "node": "function",
+      "name": "inc",
+      "params": [
+        {
+          "name": "x",
+          "type": "int"
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "y",
+          "type": "int"
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "y"
+            ],
+            "value": {
+              "node": "binop",
+              "op": "+",
+              "left": {
+                "node": "var",
+                "name": "x"
+              },
+              "right": {
+                "node": "int",
+                "value": 1
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "node": "function",
+      "name": "main",
+      "params": [],
+      "requires": null,
+      "returns": [
+        {
+          "name": "r",
+          "type": "int"
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "r"
+            ],
+            "value": {
+              "node": "call",
+              "name": "inc",
+              "args": [
+                {
+                  "node": "call",
+                  "name": "add",
+                  "args": [
+                    {
+                      "node": "int",
+                      "value": 3
+                    },
+                    {
+                      "node": "int",
+                      "value": 4
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

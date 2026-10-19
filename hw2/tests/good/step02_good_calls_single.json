@@ -1,0 +1,90 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "function",
+      "name": "add",
+      "params": [
+        {
+          "name": "a",
+          "type": "int"
+        },
+        {
+          "name": "b",
+          "type": "int"
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "r",
+          "type": "int"
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "r"
+            ],
+            "value": {
+              "node": "binop",
+              "op": "+",
+              "left": {
+                "node": "var",
+                "name": "a"
+              },
+              "right": {
+                "node": "var",
+                "name": "b"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "node": "function",
+      "name": "main",
+      "params": [],
+      "requires": null,
+      "returns": [
+        {
+          "name": "r",
+          "type": "int"
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "r"
+            ],
+            "value": {
+              "node": "call",
+              "name": "add",
+              "args": [
+                {
+                  "node": "int",
+                  "value": 2
+                },
+                {
+                  "node": "int",
+                  "value": 3
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

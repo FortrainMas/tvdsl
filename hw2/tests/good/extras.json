@@ -1,0 +1,317 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "formula",
+      "name": "positive",
+      "params": [
+        {
+          "name": "a",
+          "type": "int[]"
+        }
+      ],
+      "body": {
+        "node": "exists",
+        "var": {
+          "name": "i",
+          "type": "int"
+        },
+        "body": {
+          "node": "binop",
+          "op": "and",
+          "left": {
+            "node": "binop",
+            "op": ">=",
+            "left": {
+              "node": "var",
+              "name": "i"
+            },
+            "right": {
+              "node": "int",
+              "value": 0
+            }
+          },
+          "right": {
+            "node": "binop",
+            "op": ">",
+            "left": {
+              "node": "index",
+              "array": {
+                "node": "var",
+                "name": "a"
+              },
+              "index": {
+                "node": "var",
+                "name": "i"
+              }
+            },
+            "right": {
+              "node": "int",
+              "value": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "node": "function",
+      "name": "fill",
+      "params": [
+        {
+          "name": "a",
+          "type": "int[]"
+        },
+        {
+          "name": "n",
+          "type": "int"
+        }
+      ],
+      "requires": {
+        "node": "binop",
+        "op": "and",
+        "left": {
+          "node": "binop",
+          "op": ">=",
+          "left": {
+            "node": "var",
+            "name": "n"
+          },
+          "right": {
+            "node": "int",
+            "value": 0
+          }
+        },
+        "right": {
+          "node": "not",
+          "arg": {
+            "node": "binop",
+            "op": ">",
+            "left": {
+              "node": "var",
+              "name": "n"
+            },
+            "right": {
+              "node": "call",
+              "name": "length",
+              "args": [
+                {
+                  "node": "var",
+                  "name": "a"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "returns": [
+        {
+          "name": "b",
+          "type": "int[]"
+        },
+        {
+          "name": "k",
+          "type": "int"
+        }
+      ],
+      "ensures": {
+        "node": "binop",
+        "op": "->",
+        "left": {
+          "node": "binop",
+          "op": "or",
+          "left": {
+            "node": "binop",
+            "op": "==",
+            "left": {
+              "node": "var",
+              "name": "k"
+            },
+            "right": {
+              "node": "var",
+              "name": "n"
+            }
+          },
+          "right": {
+            "node": "bool",
+            "value": false
+          }
+        },
+        "right": {
+          "node": "bool",
+          "value": true
+        }
+      },
+      "uses": [
+        {
+          "name": "i",
+          "type": null
+        },
+        {
+          "name": "t",
+          "type": "int"
+        }
+      ],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "b"
+            ],
+            "value": {
+              "node": "var",
+              "name": "a"
+            }
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "k"
+            ],
+            "value": {
+              "node": "int",
+              "value": 0
+            }
+          },
+          {
+            "node": "while",
+            "cond": {
+              "node": "binop",
+              "op": "<",
+              "left": {
+                "node": "var",
+                "name": "k"
+              },
+              "right": {
+                "node": "var",
+                "name": "n"
+              }
+            },
+            "invariant": null,
+            "body": {
+              "node": "assign",
+              "targets": [
+                "b"
+              ],
+              "value": {
+                "node": "call",
+                "name": "set",
+                "args": [
+                  {
+                    "node": "var",
+                    "name": "b"
+                  },
+                  {
+                    "node": "var",
+                    "name": "k"
+                  },
+                  {
+                    "node": "var",
+                    "name": "k"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "b"
+            ],
+            "value": {
+              "node": "call",
+              "name": "set",
+              "args": [
+                {
+                  "node": "var",
+                  "name": "b"
+                },
+                {
+                  "node": "int",
+                  "value": 0
+                },
+                {
+                  "node": "call",
+                  "name": "set",
+                  "args": [
+                    {
+                      "node": "index",
+                      "array": {
+                        "node": "var",
+                        "name": "b"
+                      },
+                      "index": {
+                        "node": "int",
+                        "value": 0
+                      }
+                    },
+                    {
+                      "node": "int",
+                      "value": 1
+                    },
+                    {
+                      "node": "binop",
+                      "op": "*",
+                      "left": {
+                        "node": "neg",
+                        "arg": {
+                          "node": "var",
+                          "name": "k"
+                        }
+                      },
+                      "right": {
+                        "node": "int",
+                        "value": 2
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "node": "block",
+            "body": []
+          },
+          {
+            "node": "assume",
+            "cond": {
+              "node": "bool",
+              "value": true
+            }
+          },
+          {
+            "node": "assert",
+            "cond": {
+              "node": "binop",
+              "op": "->",
+              "left": {
+                "node": "call",
+                "name": "positive",
+                "args": [
+                  {
+                    "node": "var",
+                    "name": "b"
+                  }
+                ]
+              },
+              "right": {
+                "node": "binop",
+                "op": ">=",
+                "left": {
+                  "node": "var",
+                  "name": "k"
+                },
+                "right": {
+                  "node": "int",
+                  "value": 0
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

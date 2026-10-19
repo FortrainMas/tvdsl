@@ -1,0 +1,115 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "function",
+      "name": "swap",
+      "params": [
+        {
+          "name": "a",
+          "type": "int"
+        },
+        {
+          "name": "b",
+          "type": "int"
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "x"
+            ],
+            "value": {
+              "node": "var",
+              "name": "b"
+            }
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "y"
+            ],
+            "value": {
+              "node": "var",
+              "name": "a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "node": "function",
+      "name": "main",
+      "params": [],
+      "requires": null,
+      "returns": [
+        {
+          "name": "r",
+          "type": "int"
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "x",
+              "y"
+            ],
+            "value": {
+              "node": "call",
+              "name": "swap",
+              "args": [
+                {
+                  "node": "int",
+                  "value": 1
+                },
+                {
+                  "node": "int",
+                  "value": 2
+                }
+              ]
+            }
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "r"
+            ],
+            "value": {
+              "node": "binop",
+              "op": "-",
+              "left": {
+                "node": "var",
+                "name": "x"
+              },
+              "right": {
+                "node": "var",
+                "name": "y"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

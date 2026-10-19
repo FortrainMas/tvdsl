@@ -1,0 +1,3 @@
+main() returns r:int {
+    r = 01 + r @;
+}

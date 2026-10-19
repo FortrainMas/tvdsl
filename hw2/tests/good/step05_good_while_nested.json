@@ -1,0 +1,96 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "function",
+      "name": "countdown",
+      "params": [
+        {
+          "name": "n",
+          "type": "int"
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "r",
+          "type": "int"
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "r"
+            ],
+            "value": {
+              "node": "int",
+              "value": 0
+            }
+          },
+          {
+            "node": "while",
+            "cond": {
+              "node": "binop",
+              "op": ">",
+              "left": {
+                "node": "var",
+                "name": "n"
+              },
+              "right": {
+                "node": "int",
+                "value": 0
+              }
+            },
+            "invariant": null,
+            "body": {
+              "node": "block",
+              "body": [
+                {
+                  "node": "assign",
+                  "targets": [
+                    "r"
+                  ],
+                  "value": {
+                    "node": "binop",
+                    "op": "+",
+                    "left": {
+                      "node": "var",
+                      "name": "r"
+                    },
+                    "right": {
+                      "node": "int",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "node": "assign",
+                  "targets": [
+                    "n"
+                  ],
+                  "value": {
+                    "node": "binop",
+                    "op": "-",
+                    "left": {
+                      "node": "var",
+                      "name": "n"
+                    },
+                    "right": {
+                      "node": "int",
+                      "value": 1
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

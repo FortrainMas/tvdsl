@@ -1,0 +1,22 @@
+[project]
+name = "hw2"
+version = "0.1.0"
+description = "HW2 TVDSL: LL(1) парсер Funny с AST и режимом паники"
+readme = "README.md"
+authors = [
+    { name = "Ivan Shebanov", email = "vanamokanov8@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "hw1",
+]
+
+[project.scripts]
+hw2 = "hw2:main"
+
+[build-system]
+requires = ["uv_build>=0.12.17,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.sources]
+hw1 = { path = "../hw1", editable = true }
