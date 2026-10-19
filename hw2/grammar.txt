@@ -1,75 +1,52 @@
-Грамматика Funny, приведённая к LL(1) (EBNF).
-[ x ] — необязательно, { x } — ноль или больше раз, "x" — токен.
-Каждое правило = одна функция в src/hw2/parser.py (имя в скобках).
+program    = item { item } EOF
 
-program    = item { item } EOF                                           (program)
-item       = [ "function" ] IDENT "(" [ var_def { "," var_def } ] ")"    (item)
+item       = [ "function" ] IDENT "(" [ var_def { "," var_def } ] ")"
              ( "=>" expr ";"
              | [ "requires" expr ]
                "returns" var_def { "," var_def }
                [ "ensures" expr ]
                [ "uses" local_def { "," local_def } ]
                statement )
-var_def    = IDENT ":" type                                              (var_def)
-local_def  = IDENT [ ":" type ]                                          (var_def typed=False)
+
+var_def    = IDENT ":" type
+local_def  = IDENT [ ":" type ]
 type       = "int" [ "[" "]" ]
 
-statement  = block                                                       (statement)
+statement  = block
            | "if" "(" expr ")" statement [ "else" statement ]
            | "while" "(" expr ")" [ "invariant" expr ] statement
            | "assert" expr ";"
            | "assume" expr ";"
            | assignment
-block      = "{" { statement } "}"                                       (block)
-assignment = IDENT ( "=" expr ";"                                        (assignment)
+
+block      = "{" { statement } "}"
+
+assignment = IDENT ( "=" expr ";"
                    | "[" expr "]" { "[" expr "]" } "=" expr ";"
                    | "," IDENT { "," IDENT } "=" call ";" )
 
-expr       = or_expr [ "->" expr ]                                       (expr)
-or_expr    = and_expr { "or" and_expr }                                  (or_expr)
-and_expr   = not_expr { "and" not_expr }                                 (and_expr)
-not_expr   = "not" not_expr | sum [ cmp sum ]                            (not_expr)
+expr       = or_expr [ ( "->" | "→" ) expr ]
+or_expr    = and_expr { "or" and_expr }
+and_expr   = not_expr { "and" not_expr }
+not_expr   = "not" not_expr
+           | sum [ cmp sum ]
 cmp        = "==" | "!=" | "<" | "<=" | ">" | ">="
-sum        = term { ( "+" | "-" ) term }                                 (sum)
-term       = unary { ( "*" | "/" ) unary }                               (term)
-unary      = "-" unary | atom                                            (unary)
-atom       = INT | "true" | "false"                                      (atom)
+sum        = term { ( "+" | "-" ) term }
+term       = unary { ( "*" | "/" ) unary }
+unary      = "-" unary
+           | atom
+atom       = INT
+           | "true"
+           | "false"
            | "(" expr ")"
            | ( "forall" | "exists" ) "(" var_def "|" expr ")"
-           | "length" "(" [ expr { "," expr } ] ")"
-           | IDENT [ "(" [ expr { "," expr } ] ")" | "[" expr "]" { "[" expr "]" } ]
-call       = IDENT "(" [ expr { "," expr } ] ")"
+           | "length" "(" [ args ] ")"
+           | IDENT [ "(" [ args ] ")" | "[" expr "]" { "[" expr "]" } ]
+call       = IDENT "(" [ args ] ")"
+args       = expr { "," expr }
 
-
-Приоритеты (от слабого к сильному) и ассоциативность:
-  ->                правая     a -> b -> c  =  a -> (b -> c)
-  or                левая
-  and               левая
-  not               унарный
-  == != < <= > >=   без ассоциативности (a < b < c — ошибка)
-  + -               левая      a - b - c  =  (a - b) - c
-  * /               левая
-  - (унарный)       унарный
-Приоритет задаётся вложенностью правил: чем глубже правило, тем сильнее связывает оператор.
-
-
-Как получено LL(1) из грамматики funny.ru.md:
-1. Левая рекурсия expr = expr "+" expr ... заменена циклами { ... } по уровням приоритета.
-2. Факторизация присваивания: все три вида начинаются с IDENT, выбор — по следующему токену
-   ("=" — обычное, "[" — обновление массива, "," — кортеж).
-3. Факторизация item: функция и формула начинаются одинаково, выбор — после ")" по токену "=>".
-4. В atom после IDENT: "(" — вызов, "[" — обращение к массиву, иначе — переменная.
-5. Висячий else относится к ближайшему if (рекурсивный спуск берёт else сразу, как только видит).
-
-
-Отклонения от funny.ru.md:
-1. condition, predicate и expr объединены в одно правило expr. В исходной грамматике это не LL(1):
-   по "(" нельзя понять, начинается "(a + b) > c" или "(a > b and c)". Поэтому разбираем всё одной
-   грамматикой, а проверку «тут должно быть условие, а не число» (if (r), assert r) оставляем
-   проверке типов (HW3).
-2. Ключевое слово "function" перед функцией разрешено, но необязательно: в примерах курса его нет,
-   а в практике P03 и в HW1 оно есть.
-3. Формула заканчивается ";", как в project/examples/step12.
-4. Импликацию можно писать и как "->", и как "→" (в примере step12 используется "→").
-5. a[i] = v сразу обессахаривается: a = set(a, i, v);
-   a[i][j] = v  →  a = set(a, i, set(a[i], j, v)).
+IDENT      = letter { letter | digit }
+INT        = "0" | nonzero { digit }
+letter     = "A" | ... | "Z" | "a" | ... | "z" | "_"
+nonzero    = "1" | ... | "9"
+digit      = "0" | nonzero
