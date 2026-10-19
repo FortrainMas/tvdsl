@@ -1,0 +1,93 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "function",
+      "name": "choose",
+      "params": [
+        {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "r",
+          "type": "int"
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "if",
+            "cond": {
+              "node": "binop",
+              "op": ">",
+              "left": {
+                "node": "var",
+                "name": "x"
+              },
+              "right": {
+                "node": "var",
+                "name": "y"
+              }
+            },
+            "then": {
+              "node": "if",
+              "cond": {
+                "node": "binop",
+                "op": ">",
+                "left": {
+                  "node": "var",
+                  "name": "x"
+                },
+                "right": {
+                  "node": "int",
+                  "value": 0
+                }
+              },
+              "then": {
+                "node": "assign",
+                "targets": [
+                  "r"
+                ],
+                "value": {
+                  "node": "var",
+                  "name": "x"
+                }
+              },
+              "else": {
+                "node": "assign",
+                "targets": [
+                  "r"
+                ],
+                "value": {
+                  "node": "var",
+                  "name": "y"
+                }
+              }
+            },
+            "else": {
+              "node": "assign",
+              "targets": [
+                "r"
+              ],
+              "value": {
+                "node": "var",
+                "name": "y"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

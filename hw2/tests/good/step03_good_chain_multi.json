@@ -1,0 +1,171 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "function",
+      "name": "split",
+      "params": [
+        {
+          "name": "x",
+          "type": "int"
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "a",
+          "type": "int"
+        },
+        {
+          "name": "b",
+          "type": "int"
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "a"
+            ],
+            "value": {
+              "node": "binop",
+              "op": "/",
+              "left": {
+                "node": "var",
+                "name": "x"
+              },
+              "right": {
+                "node": "int",
+                "value": 2
+              }
+            }
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "b"
+            ],
+            "value": {
+              "node": "binop",
+              "op": "-",
+              "left": {
+                "node": "var",
+                "name": "x"
+              },
+              "right": {
+                "node": "var",
+                "name": "a"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "node": "function",
+      "name": "addpair",
+      "params": [
+        {
+          "name": "p",
+          "type": "int"
+        },
+        {
+          "name": "q",
+          "type": "int"
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "s",
+          "type": "int"
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "s"
+            ],
+            "value": {
+              "node": "binop",
+              "op": "+",
+              "left": {
+                "node": "var",
+                "name": "p"
+              },
+              "right": {
+                "node": "var",
+                "name": "q"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "node": "function",
+      "name": "main",
+      "params": [],
+      "requires": null,
+      "returns": [
+        {
+          "name": "r",
+          "type": "int"
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "p",
+              "q"
+            ],
+            "value": {
+              "node": "call",
+              "name": "split",
+              "args": [
+                {
+                  "node": "int",
+                  "value": 9
+                }
+              ]
+            }
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "r"
+            ],
+            "value": {
+              "node": "call",
+              "name": "addpair",
+              "args": [
+                {
+                  "node": "var",
+                  "name": "p"
+                },
+                {
+                  "node": "var",
+                  "name": "q"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

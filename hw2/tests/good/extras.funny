@@ -1,0 +1,12 @@
+// функция с ключевым словом function, uses, кванторами и вложенным обновлением массива
+positive(a:int[]) => exists (i:int | i >= 0 and a[i] > 0);
+
+function fill(a:int[], n:int) requires n >= 0 and not (n > length(a)) returns b:int[], k:int ensures k == n or false -> true uses i, t:int {
+    b = a;
+    k = 0;
+    while (k < n) b[k] = k;
+    b[0][1] = -k * 2;
+    {}
+    assume true;
+    assert positive(b) -> k >= 0;
+}
