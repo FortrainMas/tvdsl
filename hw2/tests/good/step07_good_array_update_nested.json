@@ -1,0 +1,102 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "function",
+      "name": "setdiag",
+      "params": [
+        {
+          "name": "a",
+          "type": "int[]"
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "b",
+          "type": "int[]"
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "b"
+            ],
+            "value": {
+              "node": "var",
+              "name": "a"
+            }
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "b"
+            ],
+            "value": {
+              "node": "call",
+              "name": "set",
+              "args": [
+                {
+                  "node": "var",
+                  "name": "b"
+                },
+                {
+                  "node": "int",
+                  "value": 0
+                },
+                {
+                  "node": "int",
+                  "value": 1
+                }
+              ]
+            }
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "b"
+            ],
+            "value": {
+              "node": "call",
+              "name": "set",
+              "args": [
+                {
+                  "node": "var",
+                  "name": "b"
+                },
+                {
+                  "node": "int",
+                  "value": 1
+                },
+                {
+                  "node": "binop",
+                  "op": "+",
+                  "left": {
+                    "node": "index",
+                    "array": {
+                      "node": "var",
+                      "name": "b"
+                    },
+                    "index": {
+                      "node": "int",
+                      "value": 0
+                    }
+                  },
+                  "right": {
+                    "node": "int",
+                    "value": 2
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

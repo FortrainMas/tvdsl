@@ -1,0 +1,63 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "function",
+      "name": "setfirst",
+      "params": [
+        {
+          "name": "a",
+          "type": "int[]"
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "b",
+          "type": "int[]"
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "b"
+            ],
+            "value": {
+              "node": "var",
+              "name": "a"
+            }
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "b"
+            ],
+            "value": {
+              "node": "call",
+              "name": "set",
+              "args": [
+                {
+                  "node": "var",
+                  "name": "b"
+                },
+                {
+                  "node": "int",
+                  "value": 0
+                },
+                {
+                  "node": "int",
+                  "value": 42
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

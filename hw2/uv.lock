@@ -1,0 +1,19 @@
+version = 1
+revision = 3
+requires-python = ">=3.12"
+
+[[package]]
+name = "hw1"
+version = "0.1.0"
+source = { editable = "../hw1" }
+
+[[package]]
+name = "hw2"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "hw1" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "hw1", editable = "../hw1" }]

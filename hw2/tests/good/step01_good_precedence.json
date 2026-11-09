@@ -1,0 +1,58 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "function",
+      "name": "main",
+      "params": [],
+      "requires": null,
+      "returns": [
+        {
+          "name": "r",
+          "type": "int"
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "r"
+            ],
+            "value": {
+              "node": "binop",
+              "op": "-",
+              "left": {
+                "node": "binop",
+                "op": "+",
+                "left": {
+                  "node": "int",
+                  "value": 1
+                },
+                "right": {
+                  "node": "binop",
+                  "op": "*",
+                  "left": {
+                    "node": "int",
+                    "value": 2
+                  },
+                  "right": {
+                    "node": "int",
+                    "value": 3
+                  }
+                }
+              },
+              "right": {
+                "node": "int",
+                "value": 4
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

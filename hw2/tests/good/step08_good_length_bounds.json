@@ -1,0 +1,77 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "function",
+      "name": "getlast",
+      "params": [
+        {
+          "name": "a",
+          "type": "int[]"
+        }
+      ],
+      "requires": {
+        "node": "binop",
+        "op": ">",
+        "left": {
+          "node": "call",
+          "name": "length",
+          "args": [
+            {
+              "node": "var",
+              "name": "a"
+            }
+          ]
+        },
+        "right": {
+          "node": "int",
+          "value": 0
+        }
+      },
+      "returns": [
+        {
+          "name": "r",
+          "type": "int"
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "r"
+            ],
+            "value": {
+              "node": "index",
+              "array": {
+                "node": "var",
+                "name": "a"
+              },
+              "index": {
+                "node": "binop",
+                "op": "-",
+                "left": {
+                  "node": "call",
+                  "name": "length",
+                  "args": [
+                    {
+                      "node": "var",
+                      "name": "a"
+                    }
+                  ]
+                },
+                "right": {
+                  "node": "int",
+                  "value": 1
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

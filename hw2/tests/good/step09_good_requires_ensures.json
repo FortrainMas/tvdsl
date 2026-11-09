@@ -1,0 +1,69 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "function",
+      "name": "incpos",
+      "params": [
+        {
+          "name": "x",
+          "type": "int"
+        }
+      ],
+      "requires": {
+        "node": "binop",
+        "op": ">=",
+        "left": {
+          "node": "var",
+          "name": "x"
+        },
+        "right": {
+          "node": "int",
+          "value": 0
+        }
+      },
+      "returns": [
+        {
+          "name": "y",
+          "type": "int"
+        }
+      ],
+      "ensures": {
+        "node": "binop",
+        "op": ">",
+        "left": {
+          "node": "var",
+          "name": "y"
+        },
+        "right": {
+          "node": "var",
+          "name": "x"
+        }
+      },
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "y"
+            ],
+            "value": {
+              "node": "binop",
+              "op": "+",
+              "left": {
+                "node": "var",
+                "name": "x"
+              },
+              "right": {
+                "node": "int",
+                "value": 1
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

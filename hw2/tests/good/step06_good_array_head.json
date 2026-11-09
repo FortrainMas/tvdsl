@@ -1,0 +1,46 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "function",
+      "name": "head",
+      "params": [
+        {
+          "name": "a",
+          "type": "int[]"
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "h",
+          "type": "int"
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "h"
+            ],
+            "value": {
+              "node": "index",
+              "array": {
+                "node": "var",
+                "name": "a"
+              },
+              "index": {
+                "node": "int",
+                "value": 0
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

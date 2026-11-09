@@ -1,0 +1,13 @@
+f(x:int) returns r:int {
+    r = x +;
+    if (x > 0 r = 1;
+    r = 2;
+}
+
+g(y:int returns s:int {
+    s = y;
+}
+
+h() returns t:int {
+    t = 1
+}

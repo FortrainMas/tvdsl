@@ -1,0 +1,52 @@
+program    = item { item } EOF
+
+item       = [ "function" ] IDENT "(" [ var_def { "," var_def } ] ")"
+             ( "=>" expr ";"
+             | [ "requires" expr ]
+               "returns" var_def { "," var_def }
+               [ "ensures" expr ]
+               [ "uses" local_def { "," local_def } ]
+               statement )
+
+var_def    = IDENT ":" type
+local_def  = IDENT [ ":" type ]
+type       = "int" [ "[" "]" ]
+
+statement  = block
+           | "if" "(" expr ")" statement [ "else" statement ]
+           | "while" "(" expr ")" [ "invariant" expr ] statement
+           | "assert" expr ";"
+           | "assume" expr ";"
+           | assignment
+
+block      = "{" { statement } "}"
+
+assignment = IDENT ( "=" expr ";"
+                   | "[" expr "]" { "[" expr "]" } "=" expr ";"
+                   | "," IDENT { "," IDENT } "=" call ";" )
+
+expr       = or_expr [ ( "->" | "→" ) expr ]
+or_expr    = and_expr { "or" and_expr }
+and_expr   = not_expr { "and" not_expr }
+not_expr   = "not" not_expr
+           | sum [ cmp sum ]
+cmp        = "==" | "!=" | "<" | "<=" | ">" | ">="
+sum        = term { ( "+" | "-" ) term }
+term       = unary { ( "*" | "/" ) unary }
+unary      = "-" unary
+           | atom
+atom       = INT
+           | "true"
+           | "false"
+           | "(" expr ")"
+           | ( "forall" | "exists" ) "(" var_def "|" expr ")"
+           | "length" "(" [ args ] ")"
+           | IDENT [ "(" [ args ] ")" | "[" expr "]" { "[" expr "]" } ]
+call       = IDENT "(" [ args ] ")"
+args       = expr { "," expr }
+
+IDENT      = letter { letter | digit }
+INT        = "0" | nonzero { digit }
+letter     = "A" | ... | "Z" | "a" | ... | "z" | "_"
+nonzero    = "1" | ... | "9"
+digit      = "0" | nonzero

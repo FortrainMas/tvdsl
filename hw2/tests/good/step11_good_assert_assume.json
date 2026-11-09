@@ -1,0 +1,89 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "function",
+      "name": "safe_div",
+      "params": [
+        {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "r",
+          "type": "int"
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assume",
+            "cond": {
+              "node": "binop",
+              "op": "!=",
+              "left": {
+                "node": "var",
+                "name": "y"
+              },
+              "right": {
+                "node": "int",
+                "value": 0
+              }
+            }
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "r"
+            ],
+            "value": {
+              "node": "binop",
+              "op": "/",
+              "left": {
+                "node": "var",
+                "name": "x"
+              },
+              "right": {
+                "node": "var",
+                "name": "y"
+              }
+            }
+          },
+          {
+            "node": "assert",
+            "cond": {
+              "node": "binop",
+              "op": "==",
+              "left": {
+                "node": "binop",
+                "op": "*",
+                "left": {
+                  "node": "var",
+                  "name": "r"
+                },
+                "right": {
+                  "node": "var",
+                  "name": "y"
+                }
+              },
+              "right": {
+                "node": "var",
+                "name": "x"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

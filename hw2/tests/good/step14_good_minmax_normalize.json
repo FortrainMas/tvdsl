@@ -1,0 +1,356 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "function",
+      "name": "minmax",
+      "params": [
+        {
+          "name": "a",
+          "type": "int[]"
+        }
+      ],
+      "requires": {
+        "node": "binop",
+        "op": ">",
+        "left": {
+          "node": "call",
+          "name": "length",
+          "args": [
+            {
+              "node": "var",
+              "name": "a"
+            }
+          ]
+        },
+        "right": {
+          "node": "int",
+          "value": 0
+        }
+      },
+      "returns": [
+        {
+          "name": "mn",
+          "type": "int"
+        },
+        {
+          "name": "mx",
+          "type": "int"
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "mn"
+            ],
+            "value": {
+              "node": "index",
+              "array": {
+                "node": "var",
+                "name": "a"
+              },
+              "index": {
+                "node": "int",
+                "value": 0
+              }
+            }
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "mx"
+            ],
+            "value": {
+              "node": "index",
+              "array": {
+                "node": "var",
+                "name": "a"
+              },
+              "index": {
+                "node": "int",
+                "value": 0
+              }
+            }
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "i"
+            ],
+            "value": {
+              "node": "int",
+              "value": 1
+            }
+          },
+          {
+            "node": "while",
+            "cond": {
+              "node": "binop",
+              "op": "<",
+              "left": {
+                "node": "var",
+                "name": "i"
+              },
+              "right": {
+                "node": "call",
+                "name": "length",
+                "args": [
+                  {
+                    "node": "var",
+                    "name": "a"
+                  }
+                ]
+              }
+            },
+            "invariant": null,
+            "body": {
+              "node": "block",
+              "body": [
+                {
+                  "node": "if",
+                  "cond": {
+                    "node": "binop",
+                    "op": "<",
+                    "left": {
+                      "node": "index",
+                      "array": {
+                        "node": "var",
+                        "name": "a"
+                      },
+                      "index": {
+                        "node": "var",
+                        "name": "i"
+                      }
+                    },
+                    "right": {
+                      "node": "var",
+                      "name": "mn"
+                    }
+                  },
+                  "then": {
+                    "node": "assign",
+                    "targets": [
+                      "mn"
+                    ],
+                    "value": {
+                      "node": "index",
+                      "array": {
+                        "node": "var",
+                        "name": "a"
+                      },
+                      "index": {
+                        "node": "var",
+                        "name": "i"
+                      }
+                    }
+                  },
+                  "else": null
+                },
+                {
+                  "node": "if",
+                  "cond": {
+                    "node": "binop",
+                    "op": ">",
+                    "left": {
+                      "node": "index",
+                      "array": {
+                        "node": "var",
+                        "name": "a"
+                      },
+                      "index": {
+                        "node": "var",
+                        "name": "i"
+                      }
+                    },
+                    "right": {
+                      "node": "var",
+                      "name": "mx"
+                    }
+                  },
+                  "then": {
+                    "node": "assign",
+                    "targets": [
+                      "mx"
+                    ],
+                    "value": {
+                      "node": "index",
+                      "array": {
+                        "node": "var",
+                        "name": "a"
+                      },
+                      "index": {
+                        "node": "var",
+                        "name": "i"
+                      }
+                    }
+                  },
+                  "else": null
+                },
+                {
+                  "node": "assign",
+                  "targets": [
+                    "i"
+                  ],
+                  "value": {
+                    "node": "binop",
+                    "op": "+",
+                    "left": {
+                      "node": "var",
+                      "name": "i"
+                    },
+                    "right": {
+                      "node": "int",
+                      "value": 1
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "node": "function",
+      "name": "normalize",
+      "params": [
+        {
+          "name": "a",
+          "type": "int[]"
+        }
+      ],
+      "requires": {
+        "node": "binop",
+        "op": ">=",
+        "left": {
+          "node": "call",
+          "name": "length",
+          "args": [
+            {
+              "node": "var",
+              "name": "a"
+            }
+          ]
+        },
+        "right": {
+          "node": "int",
+          "value": 2
+        }
+      },
+      "returns": [
+        {
+          "name": "b",
+          "type": "int[]"
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "b"
+            ],
+            "value": {
+              "node": "var",
+              "name": "a"
+            }
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "mn",
+              "mx"
+            ],
+            "value": {
+              "node": "call",
+              "name": "minmax",
+              "args": [
+                {
+                  "node": "var",
+                  "name": "b"
+                }
+              ]
+            }
+          },
+          {
+            "node": "if",
+            "cond": {
+              "node": "binop",
+              "op": "!=",
+              "left": {
+                "node": "var",
+                "name": "mx"
+              },
+              "right": {
+                "node": "var",
+                "name": "mn"
+              }
+            },
+            "then": {
+              "node": "block",
+              "body": [
+                {
+                  "node": "assign",
+                  "targets": [
+                    "b"
+                  ],
+                  "value": {
+                    "node": "call",
+                    "name": "set",
+                    "args": [
+                      {
+                        "node": "var",
+                        "name": "b"
+                      },
+                      {
+                        "node": "int",
+                        "value": 0
+                      },
+                      {
+                        "node": "var",
+                        "name": "mn"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "node": "assign",
+                  "targets": [
+                    "b"
+                  ],
+                  "value": {
+                    "node": "call",
+                    "name": "set",
+                    "args": [
+                      {
+                        "node": "var",
+                        "name": "b"
+                      },
+                      {
+                        "node": "int",
+                        "value": 1
+                      },
+                      {
+                        "node": "var",
+                        "name": "mx"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "else": null
+          }
+        ]
+      }
+    }
+  ]
+}
