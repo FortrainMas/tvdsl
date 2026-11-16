@@ -101,11 +101,13 @@ uv run hw2 test
 | `call` | `name`, `args` |
 | `forall`, `exists` | `var`, `body` |
 
-- Параметры, результаты и `uses` — объекты `{"name": ..., "type": "int" | "int[]" | null}`.
+- У каждого узла, кроме `program`, есть `line` и `col`: начало оператора, операнд или сам оператор в `a + b`.
+- Параметры, результаты и `uses` — объекты `{"name": ..., "type": "int" | "int[]" | null, "line": ..., "col": ...}`.
 - Отсутствующие `requires`, `ensures`, `else`, `invariant` — `null`.
 
 **Обновление массива сразу обессахаривается:** `b[0] = 42;` превращается в `assign` с `targets: ["b"]` и
-`value: call set(b, 0, 42)`. Для `a[i][j] = v` получается `a = set(a, i, set(a[i], j, v))`.
+`value: call set(b, 0, 42)`. Для `a[i][j] = v` получается `a = set(a, i, set(a[i], j, v))`. У такого `call` есть
+поле `"sugar": true`, чтобы отличать его от функции `set`, написанной пользователем.
 
 ## Ошибки
 

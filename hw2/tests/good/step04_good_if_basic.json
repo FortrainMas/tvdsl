@@ -7,14 +7,18 @@
       "params": [
         {
           "name": "x",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 5
         }
       ],
       "requires": null,
       "returns": [
         {
           "name": "r",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 20
         }
       ],
       "ensures": null,
@@ -29,12 +33,18 @@
               "op": "<",
               "left": {
                 "node": "var",
-                "name": "x"
+                "name": "x",
+                "line": 2,
+                "col": 9
               },
               "right": {
                 "node": "int",
-                "value": 0
-              }
+                "value": 0,
+                "line": 2,
+                "col": 13
+              },
+              "line": 2,
+              "col": 11
             },
             "then": {
               "node": "assign",
@@ -45,9 +55,15 @@
                 "node": "neg",
                 "arg": {
                   "node": "var",
-                  "name": "x"
-                }
-              }
+                  "name": "x",
+                  "line": 2,
+                  "col": 21
+                },
+                "line": 2,
+                "col": 20
+              },
+              "line": 2,
+              "col": 16
             },
             "else": {
               "node": "assign",
@@ -56,12 +72,22 @@
               ],
               "value": {
                 "node": "var",
-                "name": "x"
-              }
-            }
+                "name": "x",
+                "line": 2,
+                "col": 33
+              },
+              "line": 2,
+              "col": 29
+            },
+            "line": 2,
+            "col": 5
           }
-        ]
-      }
+        ],
+        "line": 1,
+        "col": 26
+      },
+      "line": 1,
+      "col": 1
     }
   ]
 }

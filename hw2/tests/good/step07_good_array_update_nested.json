@@ -7,14 +7,18 @@
       "params": [
         {
           "name": "a",
-          "type": "int[]"
+          "type": "int[]",
+          "line": 1,
+          "col": 9
         }
       ],
       "requires": null,
       "returns": [
         {
           "name": "b",
-          "type": "int[]"
+          "type": "int[]",
+          "line": 1,
+          "col": 26
         }
       ],
       "ensures": null,
@@ -29,8 +33,12 @@
             ],
             "value": {
               "node": "var",
-              "name": "a"
-            }
+              "name": "a",
+              "line": 2,
+              "col": 9
+            },
+            "line": 2,
+            "col": 5
           },
           {
             "node": "assign",
@@ -43,18 +51,29 @@
               "args": [
                 {
                   "node": "var",
-                  "name": "b"
+                  "name": "b",
+                  "line": 3,
+                  "col": 5
                 },
                 {
                   "node": "int",
-                  "value": 0
+                  "value": 0,
+                  "line": 3,
+                  "col": 7
                 },
                 {
                   "node": "int",
-                  "value": 1
+                  "value": 1,
+                  "line": 3,
+                  "col": 12
                 }
-              ]
-            }
+              ],
+              "sugar": true,
+              "line": 3,
+              "col": 5
+            },
+            "line": 3,
+            "col": 5
           },
           {
             "node": "assign",
@@ -67,11 +86,15 @@
               "args": [
                 {
                   "node": "var",
-                  "name": "b"
+                  "name": "b",
+                  "line": 4,
+                  "col": 5
                 },
                 {
                   "node": "int",
-                  "value": 1
+                  "value": 1,
+                  "line": 4,
+                  "col": 7
                 },
                 {
                   "node": "binop",
@@ -80,23 +103,42 @@
                     "node": "index",
                     "array": {
                       "node": "var",
-                      "name": "b"
+                      "name": "b",
+                      "line": 4,
+                      "col": 12
                     },
                     "index": {
                       "node": "int",
-                      "value": 0
-                    }
+                      "value": 0,
+                      "line": 4,
+                      "col": 14
+                    },
+                    "line": 4,
+                    "col": 12
                   },
                   "right": {
                     "node": "int",
-                    "value": 2
-                  }
+                    "value": 2,
+                    "line": 4,
+                    "col": 19
+                  },
+                  "line": 4,
+                  "col": 17
                 }
-              ]
-            }
+              ],
+              "sugar": true,
+              "line": 4,
+              "col": 5
+            },
+            "line": 4,
+            "col": 5
           }
-        ]
-      }
+        ],
+        "line": 1,
+        "col": 34
+      },
+      "line": 1,
+      "col": 1
     }
   ]
 }

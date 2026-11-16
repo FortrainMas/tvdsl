@@ -7,14 +7,18 @@
       "params": [
         {
           "name": "n",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 5
         }
       ],
       "requires": null,
       "returns": [
         {
           "name": "r",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 20
         }
       ],
       "ensures": null,
@@ -29,8 +33,12 @@
             ],
             "value": {
               "node": "int",
-              "value": 0
-            }
+              "value": 0,
+              "line": 2,
+              "col": 9
+            },
+            "line": 2,
+            "col": 5
           },
           {
             "node": "assign",
@@ -39,8 +47,12 @@
             ],
             "value": {
               "node": "int",
-              "value": 0
-            }
+              "value": 0,
+              "line": 3,
+              "col": 9
+            },
+            "line": 3,
+            "col": 5
           },
           {
             "node": "while",
@@ -49,12 +61,18 @@
               "op": "<",
               "left": {
                 "node": "var",
-                "name": "i"
+                "name": "i",
+                "line": 4,
+                "col": 12
               },
               "right": {
                 "node": "var",
-                "name": "n"
-              }
+                "name": "n",
+                "line": 4,
+                "col": 16
+              },
+              "line": 4,
+              "col": 14
             },
             "invariant": {
               "node": "binop",
@@ -64,19 +82,27 @@
                 "op": "<=",
                 "left": {
                   "node": "int",
-                  "value": 0
+                  "value": 0,
+                  "line": 5,
+                  "col": 19
                 },
                 "right": {
                   "node": "var",
-                  "name": "i"
-                }
+                  "name": "i",
+                  "line": 5,
+                  "col": 24
+                },
+                "line": 5,
+                "col": 21
               },
               "right": {
                 "node": "binop",
                 "op": "==",
                 "left": {
                   "node": "var",
-                  "name": "r"
+                  "name": "r",
+                  "line": 5,
+                  "col": 30
                 },
                 "right": {
                   "node": "binop",
@@ -86,27 +112,45 @@
                     "op": "*",
                     "left": {
                       "node": "var",
-                      "name": "i"
+                      "name": "i",
+                      "line": 5,
+                      "col": 35
                     },
                     "right": {
                       "node": "binop",
                       "op": "-",
                       "left": {
                         "node": "var",
-                        "name": "i"
+                        "name": "i",
+                        "line": 5,
+                        "col": 40
                       },
                       "right": {
                         "node": "int",
-                        "value": 1
-                      }
-                    }
+                        "value": 1,
+                        "line": 5,
+                        "col": 44
+                      },
+                      "line": 5,
+                      "col": 42
+                    },
+                    "line": 5,
+                    "col": 37
                   },
                   "right": {
                     "node": "int",
-                    "value": 2
-                  }
-                }
-              }
+                    "value": 2,
+                    "line": 5,
+                    "col": 49
+                  },
+                  "line": 5,
+                  "col": 47
+                },
+                "line": 5,
+                "col": 32
+              },
+              "line": 5,
+              "col": 26
             },
             "body": {
               "node": "block",
@@ -121,13 +165,21 @@
                     "op": "+",
                     "left": {
                       "node": "var",
-                      "name": "r"
+                      "name": "r",
+                      "line": 7,
+                      "col": 13
                     },
                     "right": {
                       "node": "var",
-                      "name": "i"
-                    }
-                  }
+                      "name": "i",
+                      "line": 7,
+                      "col": 17
+                    },
+                    "line": 7,
+                    "col": 15
+                  },
+                  "line": 7,
+                  "col": 9
                 },
                 {
                   "node": "assign",
@@ -139,19 +191,35 @@
                     "op": "+",
                     "left": {
                       "node": "var",
-                      "name": "i"
+                      "name": "i",
+                      "line": 8,
+                      "col": 13
                     },
                     "right": {
                       "node": "int",
-                      "value": 1
-                    }
-                  }
+                      "value": 1,
+                      "line": 8,
+                      "col": 17
+                    },
+                    "line": 8,
+                    "col": 15
+                  },
+                  "line": 8,
+                  "col": 9
                 }
-              ]
-            }
+              ],
+              "line": 6,
+              "col": 5
+            },
+            "line": 4,
+            "col": 5
           }
-        ]
-      }
+        ],
+        "line": 1,
+        "col": 26
+      },
+      "line": 1,
+      "col": 1
     }
   ]
 }

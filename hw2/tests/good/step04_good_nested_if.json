@@ -7,18 +7,24 @@
       "params": [
         {
           "name": "x",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 8
         },
         {
           "name": "y",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 15
         }
       ],
       "requires": null,
       "returns": [
         {
           "name": "r",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 30
         }
       ],
       "ensures": null,
@@ -33,12 +39,18 @@
               "op": ">",
               "left": {
                 "node": "var",
-                "name": "x"
+                "name": "x",
+                "line": 2,
+                "col": 9
               },
               "right": {
                 "node": "var",
-                "name": "y"
-              }
+                "name": "y",
+                "line": 2,
+                "col": 13
+              },
+              "line": 2,
+              "col": 11
             },
             "then": {
               "node": "if",
@@ -47,12 +59,18 @@
                 "op": ">",
                 "left": {
                   "node": "var",
-                  "name": "x"
+                  "name": "x",
+                  "line": 2,
+                  "col": 20
                 },
                 "right": {
                   "node": "int",
-                  "value": 0
-                }
+                  "value": 0,
+                  "line": 2,
+                  "col": 24
+                },
+                "line": 2,
+                "col": 22
               },
               "then": {
                 "node": "assign",
@@ -61,8 +79,12 @@
                 ],
                 "value": {
                   "node": "var",
-                  "name": "x"
-                }
+                  "name": "x",
+                  "line": 2,
+                  "col": 31
+                },
+                "line": 2,
+                "col": 27
               },
               "else": {
                 "node": "assign",
@@ -71,9 +93,15 @@
                 ],
                 "value": {
                   "node": "var",
-                  "name": "y"
-                }
-              }
+                  "name": "y",
+                  "line": 2,
+                  "col": 43
+                },
+                "line": 2,
+                "col": 39
+              },
+              "line": 2,
+              "col": 16
             },
             "else": {
               "node": "assign",
@@ -82,12 +110,22 @@
               ],
               "value": {
                 "node": "var",
-                "name": "y"
-              }
-            }
+                "name": "y",
+                "line": 3,
+                "col": 14
+              },
+              "line": 3,
+              "col": 10
+            },
+            "line": 2,
+            "col": 5
           }
-        ]
-      }
+        ],
+        "line": 1,
+        "col": 36
+      },
+      "line": 1,
+      "col": 1
     }
   ]
 }

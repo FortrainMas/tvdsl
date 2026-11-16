@@ -7,7 +7,9 @@
       "params": [
         {
           "name": "x",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 8
         }
       ],
       "requires": {
@@ -15,17 +17,25 @@
         "op": ">=",
         "left": {
           "node": "var",
-          "name": "x"
+          "name": "x",
+          "line": 1,
+          "col": 24
         },
         "right": {
           "node": "int",
-          "value": 0
-        }
+          "value": 0,
+          "line": 1,
+          "col": 29
+        },
+        "line": 1,
+        "col": 26
       },
       "returns": [
         {
           "name": "y",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 39
         }
       ],
       "ensures": {
@@ -33,12 +43,18 @@
         "op": ">",
         "left": {
           "node": "var",
-          "name": "y"
+          "name": "y",
+          "line": 1,
+          "col": 53
         },
         "right": {
           "node": "var",
-          "name": "x"
-        }
+          "name": "x",
+          "line": 1,
+          "col": 57
+        },
+        "line": 1,
+        "col": 55
       },
       "uses": [],
       "body": {
@@ -54,16 +70,28 @@
               "op": "+",
               "left": {
                 "node": "var",
-                "name": "x"
+                "name": "x",
+                "line": 2,
+                "col": 9
               },
               "right": {
                 "node": "int",
-                "value": 1
-              }
-            }
+                "value": 1,
+                "line": 2,
+                "col": 13
+              },
+              "line": 2,
+              "col": 11
+            },
+            "line": 2,
+            "col": 5
           }
-        ]
-      }
+        ],
+        "line": 1,
+        "col": 59
+      },
+      "line": 1,
+      "col": 1
     }
   ]
 }

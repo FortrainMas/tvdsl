@@ -9,7 +9,9 @@
       "returns": [
         {
           "name": "r",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 16
         }
       ],
       "ensures": null,
@@ -30,29 +32,49 @@
                 "op": "+",
                 "left": {
                   "node": "int",
-                  "value": 1
+                  "value": 1,
+                  "line": 2,
+                  "col": 9
                 },
                 "right": {
                   "node": "binop",
                   "op": "*",
                   "left": {
                     "node": "int",
-                    "value": 2
+                    "value": 2,
+                    "line": 2,
+                    "col": 13
                   },
                   "right": {
                     "node": "int",
-                    "value": 3
-                  }
-                }
+                    "value": 3,
+                    "line": 2,
+                    "col": 17
+                  },
+                  "line": 2,
+                  "col": 15
+                },
+                "line": 2,
+                "col": 11
               },
               "right": {
                 "node": "int",
-                "value": 4
-              }
-            }
+                "value": 4,
+                "line": 2,
+                "col": 21
+              },
+              "line": 2,
+              "col": 19
+            },
+            "line": 2,
+            "col": 5
           }
-        ]
-      }
+        ],
+        "line": 1,
+        "col": 22
+      },
+      "line": 1,
+      "col": 1
     }
   ]
 }

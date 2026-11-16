@@ -7,7 +7,9 @@
       "params": [
         {
           "name": "a",
-          "type": "int[]"
+          "type": "int[]",
+          "line": 1,
+          "col": 6
         }
       ],
       "requires": {
@@ -19,19 +21,29 @@
           "args": [
             {
               "node": "var",
-              "name": "a"
+              "name": "a",
+              "line": 1,
+              "col": 31
             }
-          ]
+          ],
+          "line": 1,
+          "col": 24
         },
         "right": {
           "node": "int",
-          "value": 2
-        }
+          "value": 2,
+          "line": 1,
+          "col": 37
+        },
+        "line": 1,
+        "col": 34
       },
       "returns": [
         {
           "name": "r",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 47
         }
       ],
       "ensures": null,
@@ -51,18 +63,26 @@
                 "node": "index",
                 "array": {
                   "node": "var",
-                  "name": "a"
+                  "name": "a",
+                  "line": 2,
+                  "col": 9
                 },
                 "index": {
                   "node": "int",
-                  "value": 0
-                }
+                  "value": 0,
+                  "line": 2,
+                  "col": 11
+                },
+                "line": 2,
+                "col": 9
               },
               "right": {
                 "node": "index",
                 "array": {
                   "node": "var",
-                  "name": "a"
+                  "name": "a",
+                  "line": 2,
+                  "col": 16
                 },
                 "index": {
                   "node": "binop",
@@ -73,20 +93,38 @@
                     "args": [
                       {
                         "node": "var",
-                        "name": "a"
+                        "name": "a",
+                        "line": 2,
+                        "col": 25
                       }
-                    ]
+                    ],
+                    "line": 2,
+                    "col": 18
                   },
                   "right": {
                     "node": "int",
-                    "value": 1
-                  }
-                }
-              }
-            }
+                    "value": 1,
+                    "line": 2,
+                    "col": 28
+                  },
+                  "line": 2,
+                  "col": 27
+                },
+                "line": 2,
+                "col": 16
+              },
+              "line": 2,
+              "col": 14
+            },
+            "line": 2,
+            "col": 5
           }
-        ]
-      }
+        ],
+        "line": 1,
+        "col": 53
+      },
+      "line": 1,
+      "col": 1
     }
   ]
 }

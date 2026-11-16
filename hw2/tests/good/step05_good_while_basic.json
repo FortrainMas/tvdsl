@@ -7,14 +7,18 @@
       "params": [
         {
           "name": "n",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 5
         }
       ],
       "requires": null,
       "returns": [
         {
           "name": "r",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 20
         }
       ],
       "ensures": null,
@@ -29,8 +33,12 @@
             ],
             "value": {
               "node": "int",
-              "value": 0
-            }
+              "value": 0,
+              "line": 2,
+              "col": 9
+            },
+            "line": 2,
+            "col": 5
           },
           {
             "node": "assign",
@@ -39,8 +47,12 @@
             ],
             "value": {
               "node": "int",
-              "value": 0
-            }
+              "value": 0,
+              "line": 3,
+              "col": 9
+            },
+            "line": 3,
+            "col": 5
           },
           {
             "node": "while",
@@ -49,12 +61,18 @@
               "op": "<",
               "left": {
                 "node": "var",
-                "name": "i"
+                "name": "i",
+                "line": 4,
+                "col": 12
               },
               "right": {
                 "node": "var",
-                "name": "n"
-              }
+                "name": "n",
+                "line": 4,
+                "col": 16
+              },
+              "line": 4,
+              "col": 14
             },
             "invariant": null,
             "body": {
@@ -70,13 +88,21 @@
                     "op": "+",
                     "left": {
                       "node": "var",
-                      "name": "r"
+                      "name": "r",
+                      "line": 5,
+                      "col": 13
                     },
                     "right": {
                       "node": "var",
-                      "name": "i"
-                    }
-                  }
+                      "name": "i",
+                      "line": 5,
+                      "col": 17
+                    },
+                    "line": 5,
+                    "col": 15
+                  },
+                  "line": 5,
+                  "col": 9
                 },
                 {
                   "node": "assign",
@@ -88,19 +114,35 @@
                     "op": "+",
                     "left": {
                       "node": "var",
-                      "name": "i"
+                      "name": "i",
+                      "line": 6,
+                      "col": 13
                     },
                     "right": {
                       "node": "int",
-                      "value": 1
-                    }
-                  }
+                      "value": 1,
+                      "line": 6,
+                      "col": 17
+                    },
+                    "line": 6,
+                    "col": 15
+                  },
+                  "line": 6,
+                  "col": 9
                 }
-              ]
-            }
+              ],
+              "line": 4,
+              "col": 19
+            },
+            "line": 4,
+            "col": 5
           }
-        ]
-      }
+        ],
+        "line": 1,
+        "col": 26
+      },
+      "line": 1,
+      "col": 1
     }
   ]
 }

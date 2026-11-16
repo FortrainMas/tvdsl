@@ -12,6 +12,10 @@ class ParseError(Exception):
     pass
 
 
+def where(tok):
+    return {"line": tok.line, "col": tok.col}
+
+
 def parse(text):
     tokens, errors = tokenize(text)
     parser = Parser(tokens)
@@ -85,7 +89,8 @@ class Parser:
     def item(self):
         if self.at("KW_FUNCTION"):
             self.take()
-        name = self.expect("IDENT").text
+        tok = self.expect("IDENT")
+        name = tok.text
         self.expect("LPAREN")
         params = [] if self.at("RPAREN") else self.comma_list(self.var_def)
         self.expect("RPAREN")
@@ -93,7 +98,7 @@ class Parser:
             self.take()
             body = self.expr()
             self.expect("SEMI")
-            return {"node": "formula", "name": name, "params": params, "body": body}
+            return {"node": "formula", "name": name, "params": params, "body": body, **where(tok)}
         requires = ensures = None
         uses = []
         if self.at("KW_REQUIRES"):
@@ -116,21 +121,24 @@ class Parser:
             "ensures": ensures,
             "uses": uses,
             "body": self.statement(),
+            **where(tok),
         }
 
     def var_def(self, typed=True):
-        name = self.expect("IDENT").text
+        tok = self.expect("IDENT")
+        name = tok.text
         if not typed and not self.at("COLON"):
-            return {"name": name, "type": None}
+            return {"name": name, "type": None, **where(tok)}
         self.expect("COLON")
         self.expect("KW_INT")
         if not self.at("LBRACKET"):
-            return {"name": name, "type": "int"}
+            return {"name": name, "type": "int", **where(tok)}
         self.take()
         self.expect("RBRACKET")
-        return {"name": name, "type": "int[]"}
+        return {"name": name, "type": "int[]", **where(tok)}
 
     def statement(self):
+        tok = self.tokens[self.pos]
         if self.at("LBRACE"):
             return self.block()
         if self.at("KW_IF"):
@@ -143,7 +151,7 @@ class Parser:
             if self.at("KW_ELSE"):
                 self.take()
                 other = self.statement()
-            return {"node": "if", "cond": cond, "then": then, "else": other}
+            return {"node": "if", "cond": cond, "then": then, "else": other, **where(tok)}
         if self.at("KW_WHILE"):
             self.take()
             self.expect("LPAREN")
@@ -153,18 +161,18 @@ class Parser:
             if self.at("KW_INVARIANT"):
                 self.take()
                 invariant = self.expr()
-            return {"node": "while", "cond": cond, "invariant": invariant, "body": self.statement()}
+            return {"node": "while", "cond": cond, "invariant": invariant, "body": self.statement(), **where(tok)}
         if self.at("KW_ASSERT", "KW_ASSUME"):
             kind = self.take().text
             cond = self.expr()
             self.expect("SEMI")
-            return {"node": kind, "cond": cond}
+            return {"node": kind, "cond": cond, **where(tok)}
         if self.at("IDENT"):
             return self.assignment()
         self.fail("оператор")
 
     def block(self):
-        self.expect("LBRACE")
+        tok = self.expect("LBRACE")
         body = []
         while not self.at("RBRACE", "EOF"):
             try:
@@ -173,10 +181,11 @@ class Parser:
                 self.errors.append(error.args[0])
                 self.skip()
         self.expect("RBRACE")
-        return {"node": "block", "body": body}
+        return {"node": "block", "body": body, **where(tok)}
 
     def assignment(self):
-        name = self.take().text
+        tok = self.take()
+        name = tok.text
         if self.at("LBRACKET"):
             indices = []
             while self.at("LBRACKET"):
@@ -187,11 +196,11 @@ class Parser:
             value = self.expr()
             self.expect("SEMI")
             for k in reversed(range(len(indices))):
-                array = {"node": "var", "name": name}
+                array = {"node": "var", "name": name, **where(tok)}
                 for index in indices[:k]:
-                    array = {"node": "index", "array": array, "index": index}
-                value = {"node": "call", "name": "set", "args": [array, indices[k], value]}
-            return {"node": "assign", "targets": [name], "value": value}
+                    array = {"node": "index", "array": array, "index": index, **where(tok)}
+                value = {"node": "call", "name": "set", "args": [array, indices[k], value], "sugar": True, **where(tok)}
+            return {"node": "assign", "targets": [name], "value": value, **where(tok)}
         targets = [name]
         while self.at("COMMA"):
             self.take()
@@ -202,67 +211,67 @@ class Parser:
         if len(targets) > 1 and value["node"] != "call":
             raise ParseError((start.line, start.col, "справа от x, y = должен быть вызов функции"))
         self.expect("SEMI")
-        return {"node": "assign", "targets": targets, "value": value}
+        return {"node": "assign", "targets": targets, "value": value, **where(tok)}
 
     def expr(self):
         left = self.or_expr()
         if self.at("ARROW"):
-            self.take()
-            return {"node": "binop", "op": "->", "left": left, "right": self.expr()}
+            tok = self.take()
+            return {"node": "binop", "op": "->", "left": left, "right": self.expr(), **where(tok)}
         return left
 
     def or_expr(self):
         left = self.and_expr()
         while self.at("KW_OR"):
-            self.take()
-            left = {"node": "binop", "op": "or", "left": left, "right": self.and_expr()}
+            tok = self.take()
+            left = {"node": "binop", "op": "or", "left": left, "right": self.and_expr(), **where(tok)}
         return left
 
     def and_expr(self):
         left = self.not_expr()
         while self.at("KW_AND"):
-            self.take()
-            left = {"node": "binop", "op": "and", "left": left, "right": self.not_expr()}
+            tok = self.take()
+            left = {"node": "binop", "op": "and", "left": left, "right": self.not_expr(), **where(tok)}
         return left
 
     def not_expr(self):
         if self.at("KW_NOT"):
-            self.take()
-            return {"node": "not", "arg": self.not_expr()}
+            tok = self.take()
+            return {"node": "not", "arg": self.not_expr(), **where(tok)}
         left = self.sum()
         if self.at(*COMPARE):
-            op = self.take().text
-            return {"node": "binop", "op": op, "left": left, "right": self.sum()}
+            tok = self.take()
+            return {"node": "binop", "op": tok.text, "left": left, "right": self.sum(), **where(tok)}
         return left
 
     def sum(self):
         left = self.term()
         while self.at("PLUS", "MINUS"):
-            op = self.take().text
-            left = {"node": "binop", "op": op, "left": left, "right": self.term()}
+            tok = self.take()
+            left = {"node": "binop", "op": tok.text, "left": left, "right": self.term(), **where(tok)}
         return left
 
     def term(self):
         left = self.unary()
         while self.at("STAR", "SLASH"):
-            op = self.take().text
-            left = {"node": "binop", "op": op, "left": left, "right": self.unary()}
+            tok = self.take()
+            left = {"node": "binop", "op": tok.text, "left": left, "right": self.unary(), **where(tok)}
         return left
 
     def unary(self):
         if self.at("MINUS"):
-            self.take()
-            return {"node": "neg", "arg": self.unary()}
+            tok = self.take()
+            return {"node": "neg", "arg": self.unary(), **where(tok)}
         return self.atom()
 
     def atom(self):
         tok = self.tokens[self.pos]
         if self.at("INT"):
             self.take()
-            return {"node": "int", "value": int(tok.text)}
+            return {"node": "int", "value": int(tok.text), **where(tok)}
         if self.at("KW_TRUE", "KW_FALSE"):
             self.take()
-            return {"node": "bool", "value": tok.kind == "KW_TRUE"}
+            return {"node": "bool", "value": tok.kind == "KW_TRUE", **where(tok)}
         if self.at("LPAREN"):
             self.take()
             inner = self.expr()
@@ -275,18 +284,18 @@ class Parser:
             self.expect("PIPE")
             body = self.expr()
             self.expect("RPAREN")
-            return {"node": tok.text, "var": var, "body": body}
+            return {"node": tok.text, "var": var, "body": body, **where(tok)}
         if self.at("IDENT", "KW_LENGTH"):
             self.take()
             if tok.kind == "KW_LENGTH" or self.at("LPAREN"):
                 self.expect("LPAREN")
                 args = [] if self.at("RPAREN") else self.comma_list(self.expr)
                 self.expect("RPAREN")
-                return {"node": "call", "name": tok.text, "args": args}
-            node = {"node": "var", "name": tok.text}
+                return {"node": "call", "name": tok.text, "args": args, **where(tok)}
+            node = {"node": "var", "name": tok.text, **where(tok)}
             while self.at("LBRACKET"):
                 self.take()
-                node = {"node": "index", "array": node, "index": self.expr()}
+                node = {"node": "index", "array": node, "index": self.expr(), **where(tok)}
                 self.expect("RBRACKET")
             return node
         self.fail("выражение")
