@@ -1,0 +1,16 @@
+add(a:int, b:int) returns add_r:int { add_r = a + b; }
+
+later() returns r:int { r = defined_below(1); }
+defined_below(x:int) returns y:int { y = x; }
+
+same_names(x:int) returns y:int { y = x; }
+other(x:int) returns y:int { y = x; }
+
+names(add:int) returns later:int {
+    later = add(add, 1);
+}
+
+branches(x:int) returns r:int {
+    if (x > 0) { t = 1; } else { t = 2; }
+    r = t;
+}

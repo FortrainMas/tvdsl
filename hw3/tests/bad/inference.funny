@@ -1,0 +1,22 @@
+a() returns r:int uses t { r = 1; }
+b(x:int[]) returns r:int uses t {
+    t = 1;
+    t = x;
+    r = t;
+}
+c() returns r:int uses t, u {
+    u = t;
+    t = 1;
+    r = u;
+}
+d(x:int[]) returns r:int uses t:int, s:int[] {
+    t = x;
+    s = 1;
+    r = t;
+}
+e(x:int[]) returns r:int {
+    t = x;
+    t = 1;
+    if (x[0] > 0) k = 1; else k = x;
+    r = k;
+}

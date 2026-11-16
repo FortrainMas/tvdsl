@@ -1,0 +1,23 @@
+one(x:int) returns y:int { y = x; }
+two(x:int) returns p:int, q:int { p = x; q = x; }
+fm(x:int) => x > 0;
+
+f(a:int[]) returns r:int {
+    r = one();
+    r = one(1, 2);
+    r = one(a);
+    r = length();
+    r = length(a, a);
+    r = set(a, 0, 1);
+    r = nosuch(r);
+    x, y = one(1);
+    x, y, z = two(1);
+    x, x = two(1);
+    r = two(1) + 1;
+    r = one(two(1));
+    if (fm(1)) r = 1;
+    if (forall (k:int | k > 0)) r = 1;
+    t = fm(1);
+    r = fm(1) + 1;
+    assert fm(a);
+}

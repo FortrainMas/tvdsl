@@ -1,0 +1,145 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "function",
+      "name": "sum2",
+      "params": [
+        {
+          "name": "a",
+          "type": "int[]",
+          "line": 1,
+          "col": 6
+        }
+      ],
+      "requires": {
+        "node": "binop",
+        "op": ">=",
+        "left": {
+          "node": "call",
+          "name": "length",
+          "args": [
+            {
+              "node": "var",
+              "name": "a",
+              "line": 1,
+              "col": 31,
+              "type": "int[]"
+            }
+          ],
+          "line": 1,
+          "col": 24,
+          "type": "int"
+        },
+        "right": {
+          "node": "int",
+          "value": 2,
+          "line": 1,
+          "col": 37,
+          "type": "int"
+        },
+        "line": 1,
+        "col": 34,
+        "type": "bool"
+      },
+      "returns": [
+        {
+          "name": "r",
+          "type": "int",
+          "line": 1,
+          "col": 47
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "r"
+            ],
+            "value": {
+              "node": "binop",
+              "op": "+",
+              "left": {
+                "node": "index",
+                "array": {
+                  "node": "var",
+                  "name": "a",
+                  "line": 2,
+                  "col": 9,
+                  "type": "int[]"
+                },
+                "index": {
+                  "node": "int",
+                  "value": 0,
+                  "line": 2,
+                  "col": 11,
+                  "type": "int"
+                },
+                "line": 2,
+                "col": 9,
+                "type": "int"
+              },
+              "right": {
+                "node": "index",
+                "array": {
+                  "node": "var",
+                  "name": "a",
+                  "line": 2,
+                  "col": 16,
+                  "type": "int[]"
+                },
+                "index": {
+                  "node": "binop",
+                  "op": "-",
+                  "left": {
+                    "node": "call",
+                    "name": "length",
+                    "args": [
+                      {
+                        "node": "var",
+                        "name": "a",
+                        "line": 2,
+                        "col": 25,
+                        "type": "int[]"
+                      }
+                    ],
+                    "line": 2,
+                    "col": 18,
+                    "type": "int"
+                  },
+                  "right": {
+                    "node": "int",
+                    "value": 1,
+                    "line": 2,
+                    "col": 28,
+                    "type": "int"
+                  },
+                  "line": 2,
+                  "col": 27,
+                  "type": "int"
+                },
+                "line": 2,
+                "col": 16,
+                "type": "int"
+              },
+              "line": 2,
+              "col": 14,
+              "type": "int"
+            },
+            "line": 2,
+            "col": 5
+          }
+        ],
+        "line": 1,
+        "col": 53
+      },
+      "line": 1,
+      "col": 1,
+      "locals": []
+    }
+  ]
+}

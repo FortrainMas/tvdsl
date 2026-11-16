@@ -1,0 +1,165 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "function",
+      "name": "sum",
+      "params": [
+        {
+          "name": "n",
+          "type": "int",
+          "line": 1,
+          "col": 5
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "r",
+          "type": "int",
+          "line": 1,
+          "col": 20
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "i"
+            ],
+            "value": {
+              "node": "int",
+              "value": 0,
+              "line": 2,
+              "col": 9,
+              "type": "int"
+            },
+            "line": 2,
+            "col": 5
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "r"
+            ],
+            "value": {
+              "node": "int",
+              "value": 0,
+              "line": 3,
+              "col": 9,
+              "type": "int"
+            },
+            "line": 3,
+            "col": 5
+          },
+          {
+            "node": "while",
+            "cond": {
+              "node": "binop",
+              "op": "<",
+              "left": {
+                "node": "var",
+                "name": "i",
+                "line": 4,
+                "col": 12,
+                "type": "int"
+              },
+              "right": {
+                "node": "var",
+                "name": "n",
+                "line": 4,
+                "col": 16,
+                "type": "int"
+              },
+              "line": 4,
+              "col": 14,
+              "type": "bool"
+            },
+            "invariant": null,
+            "body": {
+              "node": "block",
+              "body": [
+                {
+                  "node": "assign",
+                  "targets": [
+                    "r"
+                  ],
+                  "value": {
+                    "node": "binop",
+                    "op": "+",
+                    "left": {
+                      "node": "var",
+                      "name": "r",
+                      "line": 5,
+                      "col": 13,
+                      "type": "int"
+                    },
+                    "right": {
+                      "node": "var",
+                      "name": "i",
+                      "line": 5,
+                      "col": 17,
+                      "type": "int"
+                    },
+                    "line": 5,
+                    "col": 15,
+                    "type": "int"
+                  },
+                  "line": 5,
+                  "col": 9
+                },
+                {
+                  "node": "assign",
+                  "targets": [
+                    "i"
+                  ],
+                  "value": {
+                    "node": "binop",
+                    "op": "+",
+                    "left": {
+                      "node": "var",
+                      "name": "i",
+                      "line": 6,
+                      "col": 13,
+                      "type": "int"
+                    },
+                    "right": {
+                      "node": "int",
+                      "value": 1,
+                      "line": 6,
+                      "col": 17,
+                      "type": "int"
+                    },
+                    "line": 6,
+                    "col": 15,
+                    "type": "int"
+                  },
+                  "line": 6,
+                  "col": 9
+                }
+              ],
+              "line": 4,
+              "col": 19
+            },
+            "line": 4,
+            "col": 5
+          }
+        ],
+        "line": 1,
+        "col": 26
+      },
+      "line": 1,
+      "col": 1,
+      "locals": [
+        {
+          "name": "i",
+          "type": "int"
+        }
+      ]
+    }
+  ]
+}

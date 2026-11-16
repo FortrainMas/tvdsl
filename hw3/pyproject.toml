@@ -1,0 +1,22 @@
+[project]
+name = "hw3"
+version = "0.1.0"
+description = "HW3 TVDSL: таблицы символов и проверка типов Funny"
+readme = "README.md"
+authors = [
+    { name = "Ivan Shebanov", email = "vanamokanov8@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "hw2",
+]
+
+[project.scripts]
+hw3 = "hw3:main"
+
+[build-system]
+requires = ["uv_build>=0.12.17,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.sources]
+hw2 = { path = "../hw2", editable = true }

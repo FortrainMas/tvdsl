@@ -1,0 +1,12 @@
+a(x:int) requires r > 0 returns r:int { r = x; }
+b(x:int) returns r:int ensures t > 0 uses t:int { r = x; t = 1; }
+c(x:int) returns r:int {
+    r = x;
+    while (r > 0) invariant later > 0 { later = 1; r = r - 1; }
+}
+d(x:int) requires forall (x:int | x > 0) returns r:int {
+    assert forall (k:int | exists (k:int | k > 0));
+    assert forall (m:int | m > 0) and m > 0;
+    r = 1;
+}
+e(x:int) => x > 0 and y > 0;

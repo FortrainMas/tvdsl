@@ -1,0 +1,22 @@
+nonneg(a:int[], n:int) => forall (i:int | (0 <= i and i < n) -> a[i] >= 0);
+some_pos(a:int[]) => exists (i:int | a[i] > 0 and nonneg(a, i));
+pair(a:int[], b:int[]) => forall (i:int | exists (j:int | a[i] == b[j]));
+
+sum(a:int[], n:int) requires n >= 0 and nonneg(a, n) returns s:int ensures s >= 0 -> not false or true {
+    s = 0;
+    i = 0;
+    while (i < n)
+        invariant 0 <= i and forall (k:int | k < i -> a[k] >= 0)
+    {
+        s = s + a[i];
+        i = i + 1;
+    }
+    assume some_pos(a);
+    assert nonneg(a, n) and (s > 0 or s == 0);
+}
+
+reuse(a:int[]) returns r:int {
+    assert forall (k:int | a[k] > 0);
+    assert exists (k:int | a[k] > 0);
+    r = 0;
+}

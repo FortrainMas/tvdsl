@@ -1,0 +1,7 @@
+f() returns r:int {
+    r = i;
+    i = 0;
+    x = x + 1;
+    q[0] = 1;
+    r = nothing + nothing;
+}

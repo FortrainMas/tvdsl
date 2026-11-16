@@ -1,0 +1,15 @@
+f(a:int[], x:int) returns r:int, b:int[] {
+    r = a + 1;
+    r = -a;
+    r = a;
+    b = x;
+    r = a * a;
+    r = x[0];
+    r = a[a];
+    if (a == a) r = 1;
+    if (x < a) r = 1;
+    if (true == false) r = 1;
+    if (not x) r = 1;
+    if (x and true) r = 1;
+    if (x > 0 -> x) r = 1;
+}
