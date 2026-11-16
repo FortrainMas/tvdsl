@@ -78,7 +78,8 @@
       "locals": [
         {
           "name": "b",
-          "type": "int[]"
+          "type": "int[]",
+          "inferred": true
         }
       ]
     }

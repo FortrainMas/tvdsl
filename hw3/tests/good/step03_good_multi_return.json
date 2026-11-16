@@ -167,11 +167,13 @@
       "locals": [
         {
           "name": "x",
-          "type": "int"
+          "type": "int",
+          "inferred": true
         },
         {
           "name": "y",
-          "type": "int"
+          "type": "int",
+          "inferred": true
         }
       ]
     }

@@ -247,7 +247,8 @@
       "locals": [
         {
           "name": "i",
-          "type": "int"
+          "type": "int",
+          "inferred": true
         }
       ]
     }

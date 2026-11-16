@@ -349,7 +349,8 @@
       "locals": [
         {
           "name": "i",
-          "type": "int"
+          "type": "int",
+          "inferred": true
         }
       ]
     },
@@ -571,11 +572,13 @@
       "locals": [
         {
           "name": "mn",
-          "type": "int"
+          "type": "int",
+          "inferred": true
         },
         {
           "name": "mx",
-          "type": "int"
+          "type": "int",
+          "inferred": true
         }
       ]
     }

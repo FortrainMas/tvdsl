@@ -252,11 +252,13 @@
       "locals": [
         {
           "name": "p",
-          "type": "int"
+          "type": "int",
+          "inferred": true
         },
         {
           "name": "q",
-          "type": "int"
+          "type": "int",
+          "inferred": true
         }
       ]
     }

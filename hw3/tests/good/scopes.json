@@ -446,7 +446,8 @@
       "locals": [
         {
           "name": "t",
-          "type": "int"
+          "type": "int",
+          "inferred": true
         }
       ]
     }

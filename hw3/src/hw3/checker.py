@@ -66,8 +66,12 @@ class Checker:
         for local in node["uses"]:
             if self.lookup(local["name"])["type"] is None:
                 self.error(local, f"не удалось вывести тип {local['name']}: нет ни одного присваивания")
-        variables = self.scopes[0].items()
-        node["locals"] = [{"name": name, "type": var["type"]} for name, var in variables if var["kind"] == "local"]
+        explicit = {local["name"] for local in node["uses"] if local["type"] is not None}
+        node["locals"] = [
+            {"name": name, "type": var["type"], "inferred": name not in explicit}
+            for name, var in self.scopes[0].items()
+            if var["kind"] == "local"
+        ]
 
     def predicate(self, node):
         if node is not None:
