@@ -1,0 +1,6 @@
+f() returns r:int { r = 1; }
+f() returns r:int { r = 2; }
+g(x:int) => x > 0;
+g(x:int) => x < 0;
+f(y:int) => y > 0;
+h(a:int, a:int) returns a:int, b:int uses b, c, c:int { b = 1; c = 2; }

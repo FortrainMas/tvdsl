@@ -1,0 +1,88 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "function",
+      "name": "main",
+      "params": [],
+      "requires": null,
+      "returns": [
+        {
+          "name": "r",
+          "type": "int",
+          "line": 1,
+          "col": 16
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "r"
+            ],
+            "value": {
+              "node": "binop",
+              "op": "*",
+              "left": {
+                "node": "binop",
+                "op": "+",
+                "left": {
+                  "node": "int",
+                  "value": 1,
+                  "line": 2,
+                  "col": 10,
+                  "type": "int"
+                },
+                "right": {
+                  "node": "int",
+                  "value": 2,
+                  "line": 2,
+                  "col": 14,
+                  "type": "int"
+                },
+                "line": 2,
+                "col": 12,
+                "type": "int"
+              },
+              "right": {
+                "node": "binop",
+                "op": "-",
+                "left": {
+                  "node": "int",
+                  "value": 3,
+                  "line": 2,
+                  "col": 20,
+                  "type": "int"
+                },
+                "right": {
+                  "node": "int",
+                  "value": 4,
+                  "line": 2,
+                  "col": 24,
+                  "type": "int"
+                },
+                "line": 2,
+                "col": 22,
+                "type": "int"
+              },
+              "line": 2,
+              "col": 17,
+              "type": "int"
+            },
+            "line": 2,
+            "col": 5
+          }
+        ],
+        "line": 1,
+        "col": 22
+      },
+      "line": 1,
+      "col": 1,
+      "locals": []
+    }
+  ]
+}

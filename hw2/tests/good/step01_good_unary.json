@@ -9,7 +9,9 @@
       "returns": [
         {
           "name": "r",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 16
         }
       ],
       "ensures": null,
@@ -29,17 +31,31 @@
                 "node": "neg",
                 "arg": {
                   "node": "int",
-                  "value": 1
-                }
+                  "value": 1,
+                  "line": 2,
+                  "col": 10
+                },
+                "line": 2,
+                "col": 9
               },
               "right": {
                 "node": "int",
-                "value": 2
-              }
-            }
+                "value": 2,
+                "line": 2,
+                "col": 14
+              },
+              "line": 2,
+              "col": 12
+            },
+            "line": 2,
+            "col": 5
           }
-        ]
-      }
+        ],
+        "line": 1,
+        "col": 22
+      },
+      "line": 1,
+      "col": 1
     }
   ]
 }

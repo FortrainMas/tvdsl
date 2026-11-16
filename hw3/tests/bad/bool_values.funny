@@ -1,0 +1,8 @@
+g(x:int) returns y:int { y = x; }
+f(x:int) returns r:int {
+    r = x > 0;
+    t = true;
+    z = t;
+    r = g(x > 0);
+    if (x > 0 and x) r = 1;
+}

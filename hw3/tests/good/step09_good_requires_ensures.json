@@ -1,0 +1,107 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "function",
+      "name": "incpos",
+      "params": [
+        {
+          "name": "x",
+          "type": "int",
+          "line": 1,
+          "col": 8
+        }
+      ],
+      "requires": {
+        "node": "binop",
+        "op": ">=",
+        "left": {
+          "node": "var",
+          "name": "x",
+          "line": 1,
+          "col": 24,
+          "type": "int"
+        },
+        "right": {
+          "node": "int",
+          "value": 0,
+          "line": 1,
+          "col": 29,
+          "type": "int"
+        },
+        "line": 1,
+        "col": 26,
+        "type": "bool"
+      },
+      "returns": [
+        {
+          "name": "y",
+          "type": "int",
+          "line": 1,
+          "col": 39
+        }
+      ],
+      "ensures": {
+        "node": "binop",
+        "op": ">",
+        "left": {
+          "node": "var",
+          "name": "y",
+          "line": 1,
+          "col": 53,
+          "type": "int"
+        },
+        "right": {
+          "node": "var",
+          "name": "x",
+          "line": 1,
+          "col": 57,
+          "type": "int"
+        },
+        "line": 1,
+        "col": 55,
+        "type": "bool"
+      },
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "y"
+            ],
+            "value": {
+              "node": "binop",
+              "op": "+",
+              "left": {
+                "node": "var",
+                "name": "x",
+                "line": 2,
+                "col": 9,
+                "type": "int"
+              },
+              "right": {
+                "node": "int",
+                "value": 1,
+                "line": 2,
+                "col": 13,
+                "type": "int"
+              },
+              "line": 2,
+              "col": 11,
+              "type": "int"
+            },
+            "line": 2,
+            "col": 5
+          }
+        ],
+        "line": 1,
+        "col": 59
+      },
+      "line": 1,
+      "col": 1,
+      "locals": []
+    }
+  ]
+}

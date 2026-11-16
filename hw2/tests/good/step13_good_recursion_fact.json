@@ -7,7 +7,9 @@
       "params": [
         {
           "name": "n",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 6
         }
       ],
       "requires": {
@@ -15,17 +17,25 @@
         "op": ">=",
         "left": {
           "node": "var",
-          "name": "n"
+          "name": "n",
+          "line": 1,
+          "col": 22
         },
         "right": {
           "node": "int",
-          "value": 0
-        }
+          "value": 0,
+          "line": 1,
+          "col": 27
+        },
+        "line": 1,
+        "col": 24
       },
       "returns": [
         {
           "name": "r",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 37
         }
       ],
       "ensures": null,
@@ -40,12 +50,18 @@
               "op": "==",
               "left": {
                 "node": "var",
-                "name": "n"
+                "name": "n",
+                "line": 2,
+                "col": 9
               },
               "right": {
                 "node": "int",
-                "value": 0
-              }
+                "value": 0,
+                "line": 2,
+                "col": 14
+              },
+              "line": 2,
+              "col": 11
             },
             "then": {
               "node": "assign",
@@ -54,8 +70,12 @@
               ],
               "value": {
                 "node": "int",
-                "value": 1
-              }
+                "value": 1,
+                "line": 2,
+                "col": 21
+              },
+              "line": 2,
+              "col": 17
             },
             "else": {
               "node": "assign",
@@ -67,7 +87,9 @@
                 "op": "*",
                 "left": {
                   "node": "var",
-                  "name": "n"
+                  "name": "n",
+                  "line": 2,
+                  "col": 33
                 },
                 "right": {
                   "node": "call",
@@ -78,20 +100,38 @@
                       "op": "-",
                       "left": {
                         "node": "var",
-                        "name": "n"
+                        "name": "n",
+                        "line": 2,
+                        "col": 42
                       },
                       "right": {
                         "node": "int",
-                        "value": 1
-                      }
+                        "value": 1,
+                        "line": 2,
+                        "col": 46
+                      },
+                      "line": 2,
+                      "col": 44
                     }
-                  ]
-                }
-              }
-            }
+                  ],
+                  "line": 2,
+                  "col": 37
+                },
+                "line": 2,
+                "col": 35
+              },
+              "line": 2,
+              "col": 29
+            },
+            "line": 2,
+            "col": 5
           }
-        ]
-      }
+        ],
+        "line": 1,
+        "col": 43
+      },
+      "line": 1,
+      "col": 1
     }
   ]
 }

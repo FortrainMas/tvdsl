@@ -1,0 +1,8 @@
+pair(x:int, a:int[]) returns p:int, q:int[] { p = x; q = a; }
+
+main(a:int[]) returns r:int, s:int[] {
+    r, s = pair(1, a);
+    x, y = pair(r, s);
+    r = x;
+    s = y;
+}

@@ -7,7 +7,9 @@
       "params": [
         {
           "name": "a",
-          "type": "int[]"
+          "type": "int[]",
+          "line": 1,
+          "col": 8
         }
       ],
       "requires": {
@@ -19,23 +21,35 @@
           "args": [
             {
               "node": "var",
-              "name": "a"
+              "name": "a",
+              "line": 1,
+              "col": 33
             }
-          ]
+          ],
+          "line": 1,
+          "col": 26
         },
         "right": {
           "node": "int",
-          "value": 0
-        }
+          "value": 0,
+          "line": 1,
+          "col": 38
+        },
+        "line": 1,
+        "col": 36
       },
       "returns": [
         {
           "name": "mn",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 48
         },
         {
           "name": "mx",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 56
         }
       ],
       "ensures": null,
@@ -52,13 +66,21 @@
               "node": "index",
               "array": {
                 "node": "var",
-                "name": "a"
+                "name": "a",
+                "line": 2,
+                "col": 10
               },
               "index": {
                 "node": "int",
-                "value": 0
-              }
-            }
+                "value": 0,
+                "line": 2,
+                "col": 12
+              },
+              "line": 2,
+              "col": 10
+            },
+            "line": 2,
+            "col": 5
           },
           {
             "node": "assign",
@@ -69,13 +91,21 @@
               "node": "index",
               "array": {
                 "node": "var",
-                "name": "a"
+                "name": "a",
+                "line": 3,
+                "col": 10
               },
               "index": {
                 "node": "int",
-                "value": 0
-              }
-            }
+                "value": 0,
+                "line": 3,
+                "col": 12
+              },
+              "line": 3,
+              "col": 10
+            },
+            "line": 3,
+            "col": 5
           },
           {
             "node": "assign",
@@ -84,8 +114,12 @@
             ],
             "value": {
               "node": "int",
-              "value": 1
-            }
+              "value": 1,
+              "line": 4,
+              "col": 9
+            },
+            "line": 4,
+            "col": 5
           },
           {
             "node": "while",
@@ -94,7 +128,9 @@
               "op": "<",
               "left": {
                 "node": "var",
-                "name": "i"
+                "name": "i",
+                "line": 5,
+                "col": 12
               },
               "right": {
                 "node": "call",
@@ -102,10 +138,16 @@
                 "args": [
                   {
                     "node": "var",
-                    "name": "a"
+                    "name": "a",
+                    "line": 5,
+                    "col": 23
                   }
-                ]
-              }
+                ],
+                "line": 5,
+                "col": 16
+              },
+              "line": 5,
+              "col": 14
             },
             "invariant": null,
             "body": {
@@ -120,17 +162,27 @@
                       "node": "index",
                       "array": {
                         "node": "var",
-                        "name": "a"
+                        "name": "a",
+                        "line": 6,
+                        "col": 13
                       },
                       "index": {
                         "node": "var",
-                        "name": "i"
-                      }
+                        "name": "i",
+                        "line": 6,
+                        "col": 15
+                      },
+                      "line": 6,
+                      "col": 13
                     },
                     "right": {
                       "node": "var",
-                      "name": "mn"
-                    }
+                      "name": "mn",
+                      "line": 6,
+                      "col": 20
+                    },
+                    "line": 6,
+                    "col": 18
                   },
                   "then": {
                     "node": "assign",
@@ -141,15 +193,25 @@
                       "node": "index",
                       "array": {
                         "node": "var",
-                        "name": "a"
+                        "name": "a",
+                        "line": 6,
+                        "col": 29
                       },
                       "index": {
                         "node": "var",
-                        "name": "i"
-                      }
-                    }
+                        "name": "i",
+                        "line": 6,
+                        "col": 31
+                      },
+                      "line": 6,
+                      "col": 29
+                    },
+                    "line": 6,
+                    "col": 24
                   },
-                  "else": null
+                  "else": null,
+                  "line": 6,
+                  "col": 9
                 },
                 {
                   "node": "if",
@@ -160,17 +222,27 @@
                       "node": "index",
                       "array": {
                         "node": "var",
-                        "name": "a"
+                        "name": "a",
+                        "line": 7,
+                        "col": 13
                       },
                       "index": {
                         "node": "var",
-                        "name": "i"
-                      }
+                        "name": "i",
+                        "line": 7,
+                        "col": 15
+                      },
+                      "line": 7,
+                      "col": 13
                     },
                     "right": {
                       "node": "var",
-                      "name": "mx"
-                    }
+                      "name": "mx",
+                      "line": 7,
+                      "col": 20
+                    },
+                    "line": 7,
+                    "col": 18
                   },
                   "then": {
                     "node": "assign",
@@ -181,15 +253,25 @@
                       "node": "index",
                       "array": {
                         "node": "var",
-                        "name": "a"
+                        "name": "a",
+                        "line": 7,
+                        "col": 29
                       },
                       "index": {
                         "node": "var",
-                        "name": "i"
-                      }
-                    }
+                        "name": "i",
+                        "line": 7,
+                        "col": 31
+                      },
+                      "line": 7,
+                      "col": 29
+                    },
+                    "line": 7,
+                    "col": 24
                   },
-                  "else": null
+                  "else": null,
+                  "line": 7,
+                  "col": 9
                 },
                 {
                   "node": "assign",
@@ -201,19 +283,35 @@
                     "op": "+",
                     "left": {
                       "node": "var",
-                      "name": "i"
+                      "name": "i",
+                      "line": 8,
+                      "col": 13
                     },
                     "right": {
                       "node": "int",
-                      "value": 1
-                    }
-                  }
+                      "value": 1,
+                      "line": 8,
+                      "col": 17
+                    },
+                    "line": 8,
+                    "col": 15
+                  },
+                  "line": 8,
+                  "col": 9
                 }
-              ]
-            }
+              ],
+              "line": 5,
+              "col": 27
+            },
+            "line": 5,
+            "col": 5
           }
-        ]
-      }
+        ],
+        "line": 1,
+        "col": 63
+      },
+      "line": 1,
+      "col": 1
     },
     {
       "node": "function",
@@ -221,7 +319,9 @@
       "params": [
         {
           "name": "a",
-          "type": "int[]"
+          "type": "int[]",
+          "line": 12,
+          "col": 11
         }
       ],
       "requires": {
@@ -233,19 +333,29 @@
           "args": [
             {
               "node": "var",
-              "name": "a"
+              "name": "a",
+              "line": 12,
+              "col": 36
             }
-          ]
+          ],
+          "line": 12,
+          "col": 29
         },
         "right": {
           "node": "int",
-          "value": 2
-        }
+          "value": 2,
+          "line": 12,
+          "col": 42
+        },
+        "line": 12,
+        "col": 39
       },
       "returns": [
         {
           "name": "b",
-          "type": "int[]"
+          "type": "int[]",
+          "line": 12,
+          "col": 52
         }
       ],
       "ensures": null,
@@ -260,8 +370,12 @@
             ],
             "value": {
               "node": "var",
-              "name": "a"
-            }
+              "name": "a",
+              "line": 13,
+              "col": 9
+            },
+            "line": 13,
+            "col": 5
           },
           {
             "node": "assign",
@@ -275,10 +389,16 @@
               "args": [
                 {
                   "node": "var",
-                  "name": "b"
+                  "name": "b",
+                  "line": 14,
+                  "col": 21
                 }
-              ]
-            }
+              ],
+              "line": 14,
+              "col": 14
+            },
+            "line": 14,
+            "col": 5
           },
           {
             "node": "if",
@@ -287,12 +407,18 @@
               "op": "!=",
               "left": {
                 "node": "var",
-                "name": "mx"
+                "name": "mx",
+                "line": 15,
+                "col": 9
               },
               "right": {
                 "node": "var",
-                "name": "mn"
-              }
+                "name": "mn",
+                "line": 15,
+                "col": 15
+              },
+              "line": 15,
+              "col": 12
             },
             "then": {
               "node": "block",
@@ -308,18 +434,29 @@
                     "args": [
                       {
                         "node": "var",
-                        "name": "b"
+                        "name": "b",
+                        "line": 15,
+                        "col": 21
                       },
                       {
                         "node": "int",
-                        "value": 0
+                        "value": 0,
+                        "line": 15,
+                        "col": 23
                       },
                       {
                         "node": "var",
-                        "name": "mn"
+                        "name": "mn",
+                        "line": 15,
+                        "col": 28
                       }
-                    ]
-                  }
+                    ],
+                    "sugar": true,
+                    "line": 15,
+                    "col": 21
+                  },
+                  "line": 15,
+                  "col": 21
                 },
                 {
                   "node": "assign",
@@ -332,25 +469,44 @@
                     "args": [
                       {
                         "node": "var",
-                        "name": "b"
+                        "name": "b",
+                        "line": 15,
+                        "col": 32
                       },
                       {
                         "node": "int",
-                        "value": 1
+                        "value": 1,
+                        "line": 15,
+                        "col": 34
                       },
                       {
                         "node": "var",
-                        "name": "mx"
+                        "name": "mx",
+                        "line": 15,
+                        "col": 39
                       }
-                    ]
-                  }
+                    ],
+                    "sugar": true,
+                    "line": 15,
+                    "col": 32
+                  },
+                  "line": 15,
+                  "col": 32
                 }
-              ]
+              ],
+              "line": 15,
+              "col": 19
             },
-            "else": null
+            "else": null,
+            "line": 15,
+            "col": 5
           }
-        ]
-      }
+        ],
+        "line": 12,
+        "col": 60
+      },
+      "line": 12,
+      "col": 1
     }
   ]
 }

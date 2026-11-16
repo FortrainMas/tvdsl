@@ -1,0 +1,139 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "function",
+      "name": "safe_div",
+      "params": [
+        {
+          "name": "x",
+          "type": "int",
+          "line": 1,
+          "col": 10
+        },
+        {
+          "name": "y",
+          "type": "int",
+          "line": 1,
+          "col": 17
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "r",
+          "type": "int",
+          "line": 1,
+          "col": 32
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assume",
+            "cond": {
+              "node": "binop",
+              "op": "!=",
+              "left": {
+                "node": "var",
+                "name": "y",
+                "line": 2,
+                "col": 12,
+                "type": "int"
+              },
+              "right": {
+                "node": "int",
+                "value": 0,
+                "line": 2,
+                "col": 17,
+                "type": "int"
+              },
+              "line": 2,
+              "col": 14,
+              "type": "bool"
+            },
+            "line": 2,
+            "col": 5
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "r"
+            ],
+            "value": {
+              "node": "binop",
+              "op": "/",
+              "left": {
+                "node": "var",
+                "name": "x",
+                "line": 3,
+                "col": 9,
+                "type": "int"
+              },
+              "right": {
+                "node": "var",
+                "name": "y",
+                "line": 3,
+                "col": 13,
+                "type": "int"
+              },
+              "line": 3,
+              "col": 11,
+              "type": "int"
+            },
+            "line": 3,
+            "col": 5
+          },
+          {
+            "node": "assert",
+            "cond": {
+              "node": "binop",
+              "op": "==",
+              "left": {
+                "node": "binop",
+                "op": "*",
+                "left": {
+                  "node": "var",
+                  "name": "r",
+                  "line": 4,
+                  "col": 12,
+                  "type": "int"
+                },
+                "right": {
+                  "node": "var",
+                  "name": "y",
+                  "line": 4,
+                  "col": 16,
+                  "type": "int"
+                },
+                "line": 4,
+                "col": 14,
+                "type": "int"
+              },
+              "right": {
+                "node": "var",
+                "name": "x",
+                "line": 4,
+                "col": 21,
+                "type": "int"
+              },
+              "line": 4,
+              "col": 18,
+              "type": "bool"
+            },
+            "line": 4,
+            "col": 5
+          }
+        ],
+        "line": 1,
+        "col": 38
+      },
+      "line": 1,
+      "col": 1,
+      "locals": []
+    }
+  ]
+}

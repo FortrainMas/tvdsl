@@ -1,0 +1,455 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "function",
+      "name": "add",
+      "params": [
+        {
+          "name": "a",
+          "type": "int",
+          "line": 1,
+          "col": 5
+        },
+        {
+          "name": "b",
+          "type": "int",
+          "line": 1,
+          "col": 12
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "add_r",
+          "type": "int",
+          "line": 1,
+          "col": 27
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "add_r"
+            ],
+            "value": {
+              "node": "binop",
+              "op": "+",
+              "left": {
+                "node": "var",
+                "name": "a",
+                "line": 1,
+                "col": 47,
+                "type": "int"
+              },
+              "right": {
+                "node": "var",
+                "name": "b",
+                "line": 1,
+                "col": 51,
+                "type": "int"
+              },
+              "line": 1,
+              "col": 49,
+              "type": "int"
+            },
+            "line": 1,
+            "col": 39
+          }
+        ],
+        "line": 1,
+        "col": 37
+      },
+      "line": 1,
+      "col": 1,
+      "locals": []
+    },
+    {
+      "node": "function",
+      "name": "later",
+      "params": [],
+      "requires": null,
+      "returns": [
+        {
+          "name": "r",
+          "type": "int",
+          "line": 3,
+          "col": 17
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "r"
+            ],
+            "value": {
+              "node": "call",
+              "name": "defined_below",
+              "args": [
+                {
+                  "node": "int",
+                  "value": 1,
+                  "line": 3,
+                  "col": 43,
+                  "type": "int"
+                }
+              ],
+              "line": 3,
+              "col": 29,
+              "type": "int"
+            },
+            "line": 3,
+            "col": 25
+          }
+        ],
+        "line": 3,
+        "col": 23
+      },
+      "line": 3,
+      "col": 1,
+      "locals": []
+    },
+    {
+      "node": "function",
+      "name": "defined_below",
+      "params": [
+        {
+          "name": "x",
+          "type": "int",
+          "line": 4,
+          "col": 15
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "y",
+          "type": "int",
+          "line": 4,
+          "col": 30
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "y"
+            ],
+            "value": {
+              "node": "var",
+              "name": "x",
+              "line": 4,
+              "col": 42,
+              "type": "int"
+            },
+            "line": 4,
+            "col": 38
+          }
+        ],
+        "line": 4,
+        "col": 36
+      },
+      "line": 4,
+      "col": 1,
+      "locals": []
+    },
+    {
+      "node": "function",
+      "name": "same_names",
+      "params": [
+        {
+          "name": "x",
+          "type": "int",
+          "line": 6,
+          "col": 12
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "y",
+          "type": "int",
+          "line": 6,
+          "col": 27
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "y"
+            ],
+            "value": {
+              "node": "var",
+              "name": "x",
+              "line": 6,
+              "col": 39,
+              "type": "int"
+            },
+            "line": 6,
+            "col": 35
+          }
+        ],
+        "line": 6,
+        "col": 33
+      },
+      "line": 6,
+      "col": 1,
+      "locals": []
+    },
+    {
+      "node": "function",
+      "name": "other",
+      "params": [
+        {
+          "name": "x",
+          "type": "int",
+          "line": 7,
+          "col": 7
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "y",
+          "type": "int",
+          "line": 7,
+          "col": 22
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "y"
+            ],
+            "value": {
+              "node": "var",
+              "name": "x",
+              "line": 7,
+              "col": 34,
+              "type": "int"
+            },
+            "line": 7,
+            "col": 30
+          }
+        ],
+        "line": 7,
+        "col": 28
+      },
+      "line": 7,
+      "col": 1,
+      "locals": []
+    },
+    {
+      "node": "function",
+      "name": "names",
+      "params": [
+        {
+          "name": "add",
+          "type": "int",
+          "line": 9,
+          "col": 7
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "later",
+          "type": "int",
+          "line": 9,
+          "col": 24
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "later"
+            ],
+            "value": {
+              "node": "call",
+              "name": "add",
+              "args": [
+                {
+                  "node": "var",
+                  "name": "add",
+                  "line": 10,
+                  "col": 17,
+                  "type": "int"
+                },
+                {
+                  "node": "int",
+                  "value": 1,
+                  "line": 10,
+                  "col": 22,
+                  "type": "int"
+                }
+              ],
+              "line": 10,
+              "col": 13,
+              "type": "int"
+            },
+            "line": 10,
+            "col": 5
+          }
+        ],
+        "line": 9,
+        "col": 34
+      },
+      "line": 9,
+      "col": 1,
+      "locals": []
+    },
+    {
+      "node": "function",
+      "name": "branches",
+      "params": [
+        {
+          "name": "x",
+          "type": "int",
+          "line": 13,
+          "col": 10
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "r",
+          "type": "int",
+          "line": 13,
+          "col": 25
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "if",
+            "cond": {
+              "node": "binop",
+              "op": ">",
+              "left": {
+                "node": "var",
+                "name": "x",
+                "line": 14,
+                "col": 9,
+                "type": "int"
+              },
+              "right": {
+                "node": "int",
+                "value": 0,
+                "line": 14,
+                "col": 13,
+                "type": "int"
+              },
+              "line": 14,
+              "col": 11,
+              "type": "bool"
+            },
+            "then": {
+              "node": "block",
+              "body": [
+                {
+                  "node": "assign",
+                  "targets": [
+                    "t"
+                  ],
+                  "value": {
+                    "node": "int",
+                    "value": 1,
+                    "line": 14,
+                    "col": 22,
+                    "type": "int"
+                  },
+                  "line": 14,
+                  "col": 18
+                }
+              ],
+              "line": 14,
+              "col": 16
+            },
+            "else": {
+              "node": "block",
+              "body": [
+                {
+                  "node": "assign",
+                  "targets": [
+                    "t"
+                  ],
+                  "value": {
+                    "node": "int",
+                    "value": 2,
+                    "line": 14,
+                    "col": 38,
+                    "type": "int"
+                  },
+                  "line": 14,
+                  "col": 34
+                }
+              ],
+              "line": 14,
+              "col": 32
+            },
+            "line": 14,
+            "col": 5
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "r"
+            ],
+            "value": {
+              "node": "var",
+              "name": "t",
+              "line": 15,
+              "col": 9,
+              "type": "int"
+            },
+            "line": 15,
+            "col": 5
+          }
+        ],
+        "line": 13,
+        "col": 31
+      },
+      "line": 13,
+      "col": 1,
+      "locals": [
+        {
+          "name": "t",
+          "type": "int",
+          "inferred": true
+        }
+      ]
+    }
+  ]
+}

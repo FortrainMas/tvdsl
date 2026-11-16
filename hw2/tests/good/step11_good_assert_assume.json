@@ -7,18 +7,24 @@
       "params": [
         {
           "name": "x",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 10
         },
         {
           "name": "y",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 17
         }
       ],
       "requires": null,
       "returns": [
         {
           "name": "r",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 32
         }
       ],
       "ensures": null,
@@ -33,13 +39,21 @@
               "op": "!=",
               "left": {
                 "node": "var",
-                "name": "y"
+                "name": "y",
+                "line": 2,
+                "col": 12
               },
               "right": {
                 "node": "int",
-                "value": 0
-              }
-            }
+                "value": 0,
+                "line": 2,
+                "col": 17
+              },
+              "line": 2,
+              "col": 14
+            },
+            "line": 2,
+            "col": 5
           },
           {
             "node": "assign",
@@ -51,13 +65,21 @@
               "op": "/",
               "left": {
                 "node": "var",
-                "name": "x"
+                "name": "x",
+                "line": 3,
+                "col": 9
               },
               "right": {
                 "node": "var",
-                "name": "y"
-              }
-            }
+                "name": "y",
+                "line": 3,
+                "col": 13
+              },
+              "line": 3,
+              "col": 11
+            },
+            "line": 3,
+            "col": 5
           },
           {
             "node": "assert",
@@ -69,21 +91,37 @@
                 "op": "*",
                 "left": {
                   "node": "var",
-                  "name": "r"
+                  "name": "r",
+                  "line": 4,
+                  "col": 12
                 },
                 "right": {
                   "node": "var",
-                  "name": "y"
-                }
+                  "name": "y",
+                  "line": 4,
+                  "col": 16
+                },
+                "line": 4,
+                "col": 14
               },
               "right": {
                 "node": "var",
-                "name": "x"
-              }
-            }
+                "name": "x",
+                "line": 4,
+                "col": 21
+              },
+              "line": 4,
+              "col": 18
+            },
+            "line": 4,
+            "col": 5
           }
-        ]
-      }
+        ],
+        "line": 1,
+        "col": 38
+      },
+      "line": 1,
+      "col": 1
     }
   ]
 }

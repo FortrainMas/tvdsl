@@ -1,0 +1,266 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "function",
+      "name": "split",
+      "params": [
+        {
+          "name": "x",
+          "type": "int",
+          "line": 1,
+          "col": 7
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "a",
+          "type": "int",
+          "line": 1,
+          "col": 22
+        },
+        {
+          "name": "b",
+          "type": "int",
+          "line": 1,
+          "col": 29
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "a"
+            ],
+            "value": {
+              "node": "binop",
+              "op": "/",
+              "left": {
+                "node": "var",
+                "name": "x",
+                "line": 1,
+                "col": 41,
+                "type": "int"
+              },
+              "right": {
+                "node": "int",
+                "value": 2,
+                "line": 1,
+                "col": 45,
+                "type": "int"
+              },
+              "line": 1,
+              "col": 43,
+              "type": "int"
+            },
+            "line": 1,
+            "col": 37
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "b"
+            ],
+            "value": {
+              "node": "binop",
+              "op": "-",
+              "left": {
+                "node": "var",
+                "name": "x",
+                "line": 1,
+                "col": 52,
+                "type": "int"
+              },
+              "right": {
+                "node": "var",
+                "name": "a",
+                "line": 1,
+                "col": 56,
+                "type": "int"
+              },
+              "line": 1,
+              "col": 54,
+              "type": "int"
+            },
+            "line": 1,
+            "col": 48
+          }
+        ],
+        "line": 1,
+        "col": 35
+      },
+      "line": 1,
+      "col": 1,
+      "locals": []
+    },
+    {
+      "node": "function",
+      "name": "addpair",
+      "params": [
+        {
+          "name": "p",
+          "type": "int",
+          "line": 2,
+          "col": 9
+        },
+        {
+          "name": "q",
+          "type": "int",
+          "line": 2,
+          "col": 16
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "s",
+          "type": "int",
+          "line": 2,
+          "col": 31
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "s"
+            ],
+            "value": {
+              "node": "binop",
+              "op": "+",
+              "left": {
+                "node": "var",
+                "name": "p",
+                "line": 2,
+                "col": 43,
+                "type": "int"
+              },
+              "right": {
+                "node": "var",
+                "name": "q",
+                "line": 2,
+                "col": 47,
+                "type": "int"
+              },
+              "line": 2,
+              "col": 45,
+              "type": "int"
+            },
+            "line": 2,
+            "col": 39
+          }
+        ],
+        "line": 2,
+        "col": 37
+      },
+      "line": 2,
+      "col": 1,
+      "locals": []
+    },
+    {
+      "node": "function",
+      "name": "main",
+      "params": [],
+      "requires": null,
+      "returns": [
+        {
+          "name": "r",
+          "type": "int",
+          "line": 4,
+          "col": 16
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "p",
+              "q"
+            ],
+            "value": {
+              "node": "call",
+              "name": "split",
+              "args": [
+                {
+                  "node": "int",
+                  "value": 9,
+                  "line": 5,
+                  "col": 18,
+                  "type": "int"
+                }
+              ],
+              "line": 5,
+              "col": 12,
+              "type": [
+                "int",
+                "int"
+              ]
+            },
+            "line": 5,
+            "col": 5
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "r"
+            ],
+            "value": {
+              "node": "call",
+              "name": "addpair",
+              "args": [
+                {
+                  "node": "var",
+                  "name": "p",
+                  "line": 6,
+                  "col": 17,
+                  "type": "int"
+                },
+                {
+                  "node": "var",
+                  "name": "q",
+                  "line": 6,
+                  "col": 20,
+                  "type": "int"
+                }
+              ],
+              "line": 6,
+              "col": 9,
+              "type": "int"
+            },
+            "line": 6,
+            "col": 5
+          }
+        ],
+        "line": 4,
+        "col": 22
+      },
+      "line": 4,
+      "col": 1,
+      "locals": [
+        {
+          "name": "p",
+          "type": "int",
+          "inferred": true
+        },
+        {
+          "name": "q",
+          "type": "int",
+          "inferred": true
+        }
+      ]
+    }
+  ]
+}

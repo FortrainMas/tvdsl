@@ -1,0 +1,130 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "function",
+      "name": "add",
+      "params": [
+        {
+          "name": "a",
+          "type": "int",
+          "line": 1,
+          "col": 5
+        },
+        {
+          "name": "b",
+          "type": "int",
+          "line": 1,
+          "col": 12
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "r",
+          "type": "int",
+          "line": 1,
+          "col": 27
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "r"
+            ],
+            "value": {
+              "node": "binop",
+              "op": "+",
+              "left": {
+                "node": "var",
+                "name": "a",
+                "line": 2,
+                "col": 9,
+                "type": "int"
+              },
+              "right": {
+                "node": "var",
+                "name": "b",
+                "line": 2,
+                "col": 13,
+                "type": "int"
+              },
+              "line": 2,
+              "col": 11,
+              "type": "int"
+            },
+            "line": 2,
+            "col": 5
+          }
+        ],
+        "line": 1,
+        "col": 33
+      },
+      "line": 1,
+      "col": 1,
+      "locals": []
+    },
+    {
+      "node": "function",
+      "name": "main",
+      "params": [],
+      "requires": null,
+      "returns": [
+        {
+          "name": "r",
+          "type": "int",
+          "line": 5,
+          "col": 16
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "r"
+            ],
+            "value": {
+              "node": "call",
+              "name": "add",
+              "args": [
+                {
+                  "node": "int",
+                  "value": 2,
+                  "line": 6,
+                  "col": 13,
+                  "type": "int"
+                },
+                {
+                  "node": "int",
+                  "value": 3,
+                  "line": 6,
+                  "col": 16,
+                  "type": "int"
+                }
+              ],
+              "line": 6,
+              "col": 9,
+              "type": "int"
+            },
+            "line": 6,
+            "col": 5
+          }
+        ],
+        "line": 5,
+        "col": 22
+      },
+      "line": 5,
+      "col": 1,
+      "locals": []
+    }
+  ]
+}

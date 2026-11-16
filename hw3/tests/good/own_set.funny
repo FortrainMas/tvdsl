@@ -1,0 +1,6 @@
+set(a:int[], i:int) returns r:int { r = a[i]; }
+
+main(a:int[]) returns b:int[] {
+    b = a;
+    b[set(a, 0)] = set(a, 1);
+}

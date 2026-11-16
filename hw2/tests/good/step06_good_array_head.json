@@ -7,14 +7,18 @@
       "params": [
         {
           "name": "a",
-          "type": "int[]"
+          "type": "int[]",
+          "line": 1,
+          "col": 6
         }
       ],
       "requires": null,
       "returns": [
         {
           "name": "h",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 23
         }
       ],
       "ensures": null,
@@ -31,16 +35,28 @@
               "node": "index",
               "array": {
                 "node": "var",
-                "name": "a"
+                "name": "a",
+                "line": 2,
+                "col": 9
               },
               "index": {
                 "node": "int",
-                "value": 0
-              }
-            }
+                "value": 0,
+                "line": 2,
+                "col": 11
+              },
+              "line": 2,
+              "col": 9
+            },
+            "line": 2,
+            "col": 5
           }
-        ]
-      }
+        ],
+        "line": 1,
+        "col": 29
+      },
+      "line": 1,
+      "col": 1
     }
   ]
 }

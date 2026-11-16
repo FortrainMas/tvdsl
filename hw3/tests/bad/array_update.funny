@@ -1,0 +1,9 @@
+f(x:int, a:int[]) returns r:int, b:int[] {
+    r[0] = 1;
+    b = a;
+    b[0][1] = 2;
+    b[a] = 1;
+    b[0] = a;
+    x[0] = 1;
+    a[0] = 1;
+}

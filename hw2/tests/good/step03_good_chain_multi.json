@@ -7,18 +7,24 @@
       "params": [
         {
           "name": "x",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 7
         }
       ],
       "requires": null,
       "returns": [
         {
           "name": "a",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 22
         },
         {
           "name": "b",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 29
         }
       ],
       "ensures": null,
@@ -36,13 +42,21 @@
               "op": "/",
               "left": {
                 "node": "var",
-                "name": "x"
+                "name": "x",
+                "line": 1,
+                "col": 41
               },
               "right": {
                 "node": "int",
-                "value": 2
-              }
-            }
+                "value": 2,
+                "line": 1,
+                "col": 45
+              },
+              "line": 1,
+              "col": 43
+            },
+            "line": 1,
+            "col": 37
           },
           {
             "node": "assign",
@@ -54,16 +68,28 @@
               "op": "-",
               "left": {
                 "node": "var",
-                "name": "x"
+                "name": "x",
+                "line": 1,
+                "col": 52
               },
               "right": {
                 "node": "var",
-                "name": "a"
-              }
-            }
+                "name": "a",
+                "line": 1,
+                "col": 56
+              },
+              "line": 1,
+              "col": 54
+            },
+            "line": 1,
+            "col": 48
           }
-        ]
-      }
+        ],
+        "line": 1,
+        "col": 35
+      },
+      "line": 1,
+      "col": 1
     },
     {
       "node": "function",
@@ -71,18 +97,24 @@
       "params": [
         {
           "name": "p",
-          "type": "int"
+          "type": "int",
+          "line": 2,
+          "col": 9
         },
         {
           "name": "q",
-          "type": "int"
+          "type": "int",
+          "line": 2,
+          "col": 16
         }
       ],
       "requires": null,
       "returns": [
         {
           "name": "s",
-          "type": "int"
+          "type": "int",
+          "line": 2,
+          "col": 31
         }
       ],
       "ensures": null,
@@ -100,16 +132,28 @@
               "op": "+",
               "left": {
                 "node": "var",
-                "name": "p"
+                "name": "p",
+                "line": 2,
+                "col": 43
               },
               "right": {
                 "node": "var",
-                "name": "q"
-              }
-            }
+                "name": "q",
+                "line": 2,
+                "col": 47
+              },
+              "line": 2,
+              "col": 45
+            },
+            "line": 2,
+            "col": 39
           }
-        ]
-      }
+        ],
+        "line": 2,
+        "col": 37
+      },
+      "line": 2,
+      "col": 1
     },
     {
       "node": "function",
@@ -119,7 +163,9 @@
       "returns": [
         {
           "name": "r",
-          "type": "int"
+          "type": "int",
+          "line": 4,
+          "col": 16
         }
       ],
       "ensures": null,
@@ -139,10 +185,16 @@
               "args": [
                 {
                   "node": "int",
-                  "value": 9
+                  "value": 9,
+                  "line": 5,
+                  "col": 18
                 }
-              ]
-            }
+              ],
+              "line": 5,
+              "col": 12
+            },
+            "line": 5,
+            "col": 5
           },
           {
             "node": "assign",
@@ -155,17 +207,29 @@
               "args": [
                 {
                   "node": "var",
-                  "name": "p"
+                  "name": "p",
+                  "line": 6,
+                  "col": 17
                 },
                 {
                   "node": "var",
-                  "name": "q"
+                  "name": "q",
+                  "line": 6,
+                  "col": 20
                 }
-              ]
-            }
+              ],
+              "line": 6,
+              "col": 9
+            },
+            "line": 6,
+            "col": 5
           }
-        ]
-      }
+        ],
+        "line": 4,
+        "col": 22
+      },
+      "line": 4,
+      "col": 1
     }
   ]
 }

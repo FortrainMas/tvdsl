@@ -1,0 +1,543 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "function",
+      "name": "inc",
+      "params": [
+        {
+          "name": "x",
+          "type": "int",
+          "line": 1,
+          "col": 5
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "y",
+          "type": "int",
+          "line": 1,
+          "col": 20
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "y"
+            ],
+            "value": {
+              "node": "binop",
+              "op": "+",
+              "left": {
+                "node": "var",
+                "name": "x",
+                "line": 1,
+                "col": 32,
+                "type": "int"
+              },
+              "right": {
+                "node": "int",
+                "value": 1,
+                "line": 1,
+                "col": 36,
+                "type": "int"
+              },
+              "line": 1,
+              "col": 34,
+              "type": "int"
+            },
+            "line": 1,
+            "col": 28
+          }
+        ],
+        "line": 1,
+        "col": 26
+      },
+      "line": 1,
+      "col": 1,
+      "locals": []
+    },
+    {
+      "node": "function",
+      "name": "main",
+      "params": [
+        {
+          "name": "a",
+          "type": "int[]",
+          "line": 3,
+          "col": 6
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "r",
+          "type": "int",
+          "line": 3,
+          "col": 23
+        }
+      ],
+      "ensures": null,
+      "uses": [
+        {
+          "name": "t",
+          "type": null,
+          "line": 3,
+          "col": 34
+        },
+        {
+          "name": "c",
+          "type": "int",
+          "line": 3,
+          "col": 37
+        },
+        {
+          "name": "arr",
+          "type": null,
+          "line": 3,
+          "col": 44
+        },
+        {
+          "name": "idx",
+          "type": null,
+          "line": 3,
+          "col": 49
+        }
+      ],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "t"
+            ],
+            "value": {
+              "node": "int",
+              "value": 1,
+              "line": 4,
+              "col": 9,
+              "type": "int"
+            },
+            "line": 4,
+            "col": 5
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "t"
+            ],
+            "value": {
+              "node": "binop",
+              "op": "+",
+              "left": {
+                "node": "var",
+                "name": "t",
+                "line": 5,
+                "col": 9,
+                "type": "int"
+              },
+              "right": {
+                "node": "int",
+                "value": 2,
+                "line": 5,
+                "col": 13,
+                "type": "int"
+              },
+              "line": 5,
+              "col": 11,
+              "type": "int"
+            },
+            "line": 5,
+            "col": 5
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "c"
+            ],
+            "value": {
+              "node": "int",
+              "value": 0,
+              "line": 6,
+              "col": 9,
+              "type": "int"
+            },
+            "line": 6,
+            "col": 5
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "idx"
+            ],
+            "value": {
+              "node": "int",
+              "value": 0,
+              "line": 7,
+              "col": 11,
+              "type": "int"
+            },
+            "line": 7,
+            "col": 5
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "arr"
+            ],
+            "value": {
+              "node": "var",
+              "name": "a",
+              "line": 8,
+              "col": 11,
+              "type": "int[]"
+            },
+            "line": 8,
+            "col": 5
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "arr"
+            ],
+            "value": {
+              "node": "call",
+              "name": "set",
+              "args": [
+                {
+                  "node": "var",
+                  "name": "arr",
+                  "line": 9,
+                  "col": 5,
+                  "type": "int[]"
+                },
+                {
+                  "node": "var",
+                  "name": "idx",
+                  "line": 9,
+                  "col": 9,
+                  "type": "int"
+                },
+                {
+                  "node": "var",
+                  "name": "t",
+                  "line": 9,
+                  "col": 16,
+                  "type": "int"
+                }
+              ],
+              "sugar": true,
+              "line": 9,
+              "col": 5,
+              "type": "int[]"
+            },
+            "line": 9,
+            "col": 5
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "fresh"
+            ],
+            "value": {
+              "node": "var",
+              "name": "arr",
+              "line": 10,
+              "col": 13,
+              "type": "int[]"
+            },
+            "line": 10,
+            "col": 5
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "n"
+            ],
+            "value": {
+              "node": "call",
+              "name": "length",
+              "args": [
+                {
+                  "node": "var",
+                  "name": "fresh",
+                  "line": 11,
+                  "col": 16,
+                  "type": "int[]"
+                }
+              ],
+              "line": 11,
+              "col": 9,
+              "type": "int"
+            },
+            "line": 11,
+            "col": 5
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "r"
+            ],
+            "value": {
+              "node": "call",
+              "name": "inc",
+              "args": [
+                {
+                  "node": "var",
+                  "name": "n",
+                  "line": 12,
+                  "col": 13,
+                  "type": "int"
+                }
+              ],
+              "line": 12,
+              "col": 9,
+              "type": "int"
+            },
+            "line": 12,
+            "col": 5
+          }
+        ],
+        "line": 3,
+        "col": 53
+      },
+      "line": 3,
+      "col": 1,
+      "locals": [
+        {
+          "name": "t",
+          "type": "int",
+          "inferred": true
+        },
+        {
+          "name": "c",
+          "type": "int",
+          "inferred": false
+        },
+        {
+          "name": "arr",
+          "type": "int[]",
+          "inferred": true
+        },
+        {
+          "name": "idx",
+          "type": "int",
+          "inferred": true
+        },
+        {
+          "name": "fresh",
+          "type": "int[]",
+          "inferred": true
+        },
+        {
+          "name": "n",
+          "type": "int",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "node": "function",
+      "name": "update",
+      "params": [
+        {
+          "name": "a",
+          "type": "int[]",
+          "line": 15,
+          "col": 8
+        }
+      ],
+      "requires": null,
+      "returns": [
+        {
+          "name": "r",
+          "type": "int",
+          "line": 15,
+          "col": 25
+        }
+      ],
+      "ensures": null,
+      "uses": [
+        {
+          "name": "b",
+          "type": null,
+          "line": 15,
+          "col": 36
+        }
+      ],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "b"
+            ],
+            "value": {
+              "node": "call",
+              "name": "set",
+              "args": [
+                {
+                  "node": "var",
+                  "name": "b",
+                  "line": 16,
+                  "col": 5,
+                  "type": "int[]"
+                },
+                {
+                  "node": "int",
+                  "value": 0,
+                  "line": 16,
+                  "col": 7,
+                  "type": "int"
+                },
+                {
+                  "node": "int",
+                  "value": 42,
+                  "line": 16,
+                  "col": 12,
+                  "type": "int"
+                }
+              ],
+              "sugar": true,
+              "line": 16,
+              "col": 5,
+              "type": "int[]"
+            },
+            "line": 16,
+            "col": 5
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "r"
+            ],
+            "value": {
+              "node": "index",
+              "array": {
+                "node": "var",
+                "name": "b",
+                "line": 17,
+                "col": 9,
+                "type": "int[]"
+              },
+              "index": {
+                "node": "int",
+                "value": 0,
+                "line": 17,
+                "col": 11,
+                "type": "int"
+              },
+              "line": 17,
+              "col": 9,
+              "type": "int"
+            },
+            "line": 17,
+            "col": 5
+          }
+        ],
+        "line": 15,
+        "col": 38
+      },
+      "line": 15,
+      "col": 1,
+      "locals": [
+        {
+          "name": "b",
+          "type": "int[]",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "node": "function",
+      "name": "context",
+      "params": [],
+      "requires": null,
+      "returns": [
+        {
+          "name": "r",
+          "type": "int",
+          "line": 20,
+          "col": 19
+        }
+      ],
+      "ensures": null,
+      "uses": [
+        {
+          "name": "t",
+          "type": null,
+          "line": 20,
+          "col": 30
+        }
+      ],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "r"
+            ],
+            "value": {
+              "node": "binop",
+              "op": "+",
+              "left": {
+                "node": "var",
+                "name": "t",
+                "line": 21,
+                "col": 9,
+                "type": "int"
+              },
+              "right": {
+                "node": "int",
+                "value": 1,
+                "line": 21,
+                "col": 13,
+                "type": "int"
+              },
+              "line": 21,
+              "col": 11,
+              "type": "int"
+            },
+            "line": 21,
+            "col": 5
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "t"
+            ],
+            "value": {
+              "node": "int",
+              "value": 2,
+              "line": 22,
+              "col": 9,
+              "type": "int"
+            },
+            "line": 22,
+            "col": 5
+          }
+        ],
+        "line": 20,
+        "col": 32
+      },
+      "line": 20,
+      "col": 1,
+      "locals": [
+        {
+          "name": "t",
+          "type": "int",
+          "inferred": true
+        }
+      ]
+    }
+  ]
+}

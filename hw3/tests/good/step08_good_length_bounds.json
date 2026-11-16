@@ -1,0 +1,118 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "function",
+      "name": "getlast",
+      "params": [
+        {
+          "name": "a",
+          "type": "int[]",
+          "line": 1,
+          "col": 9
+        }
+      ],
+      "requires": {
+        "node": "binop",
+        "op": ">",
+        "left": {
+          "node": "call",
+          "name": "length",
+          "args": [
+            {
+              "node": "var",
+              "name": "a",
+              "line": 1,
+              "col": 34,
+              "type": "int[]"
+            }
+          ],
+          "line": 1,
+          "col": 27,
+          "type": "int"
+        },
+        "right": {
+          "node": "int",
+          "value": 0,
+          "line": 1,
+          "col": 39,
+          "type": "int"
+        },
+        "line": 1,
+        "col": 37,
+        "type": "bool"
+      },
+      "returns": [
+        {
+          "name": "r",
+          "type": "int",
+          "line": 1,
+          "col": 49
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "r"
+            ],
+            "value": {
+              "node": "index",
+              "array": {
+                "node": "var",
+                "name": "a",
+                "line": 2,
+                "col": 9,
+                "type": "int[]"
+              },
+              "index": {
+                "node": "binop",
+                "op": "-",
+                "left": {
+                  "node": "call",
+                  "name": "length",
+                  "args": [
+                    {
+                      "node": "var",
+                      "name": "a",
+                      "line": 2,
+                      "col": 18,
+                      "type": "int[]"
+                    }
+                  ],
+                  "line": 2,
+                  "col": 11,
+                  "type": "int"
+                },
+                "right": {
+                  "node": "int",
+                  "value": 1,
+                  "line": 2,
+                  "col": 23,
+                  "type": "int"
+                },
+                "line": 2,
+                "col": 21,
+                "type": "int"
+              },
+              "line": 2,
+              "col": 9,
+              "type": "int"
+            },
+            "line": 2,
+            "col": 5
+          }
+        ],
+        "line": 1,
+        "col": 55
+      },
+      "line": 1,
+      "col": 1,
+      "locals": []
+    }
+  ]
+}

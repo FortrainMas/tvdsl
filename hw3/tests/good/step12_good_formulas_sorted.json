@@ -1,0 +1,484 @@
+{
+  "node": "program",
+  "items": [
+    {
+      "node": "formula",
+      "name": "is_sorted",
+      "params": [
+        {
+          "name": "a",
+          "type": "int[]",
+          "line": 2,
+          "col": 11
+        },
+        {
+          "name": "l",
+          "type": "int",
+          "line": 2,
+          "col": 20
+        },
+        {
+          "name": "r",
+          "type": "int",
+          "line": 2,
+          "col": 27
+        }
+      ],
+      "body": {
+        "node": "forall",
+        "var": {
+          "name": "k",
+          "type": "int",
+          "line": 3,
+          "col": 13
+        },
+        "body": {
+          "node": "binop",
+          "op": "->",
+          "left": {
+            "node": "binop",
+            "op": "and",
+            "left": {
+              "node": "binop",
+              "op": "<=",
+              "left": {
+                "node": "var",
+                "name": "l",
+                "line": 3,
+                "col": 22,
+                "type": "int"
+              },
+              "right": {
+                "node": "var",
+                "name": "k",
+                "line": 3,
+                "col": 27,
+                "type": "int"
+              },
+              "line": 3,
+              "col": 24,
+              "type": "bool"
+            },
+            "right": {
+              "node": "binop",
+              "op": "<=",
+              "left": {
+                "node": "binop",
+                "op": "+",
+                "left": {
+                  "node": "var",
+                  "name": "k",
+                  "line": 3,
+                  "col": 33,
+                  "type": "int"
+                },
+                "right": {
+                  "node": "int",
+                  "value": 1,
+                  "line": 3,
+                  "col": 37,
+                  "type": "int"
+                },
+                "line": 3,
+                "col": 35,
+                "type": "int"
+              },
+              "right": {
+                "node": "var",
+                "name": "r",
+                "line": 3,
+                "col": 42,
+                "type": "int"
+              },
+              "line": 3,
+              "col": 39,
+              "type": "bool"
+            },
+            "line": 3,
+            "col": 29,
+            "type": "bool"
+          },
+          "right": {
+            "node": "binop",
+            "op": "<=",
+            "left": {
+              "node": "index",
+              "array": {
+                "node": "var",
+                "name": "a",
+                "line": 3,
+                "col": 47,
+                "type": "int[]"
+              },
+              "index": {
+                "node": "var",
+                "name": "k",
+                "line": 3,
+                "col": 49,
+                "type": "int"
+              },
+              "line": 3,
+              "col": 47,
+              "type": "int"
+            },
+            "right": {
+              "node": "index",
+              "array": {
+                "node": "var",
+                "name": "a",
+                "line": 3,
+                "col": 55,
+                "type": "int[]"
+              },
+              "index": {
+                "node": "binop",
+                "op": "+",
+                "left": {
+                  "node": "var",
+                  "name": "k",
+                  "line": 3,
+                  "col": 57,
+                  "type": "int"
+                },
+                "right": {
+                  "node": "int",
+                  "value": 1,
+                  "line": 3,
+                  "col": 61,
+                  "type": "int"
+                },
+                "line": 3,
+                "col": 59,
+                "type": "int"
+              },
+              "line": 3,
+              "col": 55,
+              "type": "int"
+            },
+            "line": 3,
+            "col": 52,
+            "type": "bool"
+          },
+          "line": 3,
+          "col": 45,
+          "type": "bool"
+        },
+        "line": 3,
+        "col": 5,
+        "type": "bool"
+      },
+      "line": 2,
+      "col": 1
+    },
+    {
+      "node": "function",
+      "name": "check_sorted",
+      "params": [
+        {
+          "name": "a",
+          "type": "int[]",
+          "line": 5,
+          "col": 14
+        }
+      ],
+      "requires": {
+        "node": "binop",
+        "op": ">",
+        "left": {
+          "node": "call",
+          "name": "length",
+          "args": [
+            {
+              "node": "var",
+              "name": "a",
+              "line": 5,
+              "col": 39,
+              "type": "int[]"
+            }
+          ],
+          "line": 5,
+          "col": 32,
+          "type": "int"
+        },
+        "right": {
+          "node": "int",
+          "value": 1,
+          "line": 5,
+          "col": 44,
+          "type": "int"
+        },
+        "line": 5,
+        "col": 42,
+        "type": "bool"
+      },
+      "returns": [
+        {
+          "name": "ok",
+          "type": "int",
+          "line": 5,
+          "col": 54
+        }
+      ],
+      "ensures": null,
+      "uses": [],
+      "body": {
+        "node": "block",
+        "body": [
+          {
+            "node": "assign",
+            "targets": [
+              "ok"
+            ],
+            "value": {
+              "node": "int",
+              "value": 1,
+              "line": 6,
+              "col": 10,
+              "type": "int"
+            },
+            "line": 6,
+            "col": 5
+          },
+          {
+            "node": "assign",
+            "targets": [
+              "i"
+            ],
+            "value": {
+              "node": "int",
+              "value": 1,
+              "line": 7,
+              "col": 9,
+              "type": "int"
+            },
+            "line": 7,
+            "col": 5
+          },
+          {
+            "node": "while",
+            "cond": {
+              "node": "binop",
+              "op": "<",
+              "left": {
+                "node": "var",
+                "name": "i",
+                "line": 8,
+                "col": 12,
+                "type": "int"
+              },
+              "right": {
+                "node": "call",
+                "name": "length",
+                "args": [
+                  {
+                    "node": "var",
+                    "name": "a",
+                    "line": 8,
+                    "col": 23,
+                    "type": "int[]"
+                  }
+                ],
+                "line": 8,
+                "col": 16,
+                "type": "int"
+              },
+              "line": 8,
+              "col": 14,
+              "type": "bool"
+            },
+            "invariant": null,
+            "body": {
+              "node": "block",
+              "body": [
+                {
+                  "node": "if",
+                  "cond": {
+                    "node": "binop",
+                    "op": ">",
+                    "left": {
+                      "node": "index",
+                      "array": {
+                        "node": "var",
+                        "name": "a",
+                        "line": 9,
+                        "col": 13,
+                        "type": "int[]"
+                      },
+                      "index": {
+                        "node": "binop",
+                        "op": "-",
+                        "left": {
+                          "node": "var",
+                          "name": "i",
+                          "line": 9,
+                          "col": 15,
+                          "type": "int"
+                        },
+                        "right": {
+                          "node": "int",
+                          "value": 1,
+                          "line": 9,
+                          "col": 19,
+                          "type": "int"
+                        },
+                        "line": 9,
+                        "col": 17,
+                        "type": "int"
+                      },
+                      "line": 9,
+                      "col": 13,
+                      "type": "int"
+                    },
+                    "right": {
+                      "node": "index",
+                      "array": {
+                        "node": "var",
+                        "name": "a",
+                        "line": 9,
+                        "col": 24,
+                        "type": "int[]"
+                      },
+                      "index": {
+                        "node": "var",
+                        "name": "i",
+                        "line": 9,
+                        "col": 26,
+                        "type": "int"
+                      },
+                      "line": 9,
+                      "col": 24,
+                      "type": "int"
+                    },
+                    "line": 9,
+                    "col": 22,
+                    "type": "bool"
+                  },
+                  "then": {
+                    "node": "assign",
+                    "targets": [
+                      "ok"
+                    ],
+                    "value": {
+                      "node": "int",
+                      "value": 0,
+                      "line": 9,
+                      "col": 35,
+                      "type": "int"
+                    },
+                    "line": 9,
+                    "col": 30
+                  },
+                  "else": null,
+                  "line": 9,
+                  "col": 9
+                },
+                {
+                  "node": "assign",
+                  "targets": [
+                    "i"
+                  ],
+                  "value": {
+                    "node": "binop",
+                    "op": "+",
+                    "left": {
+                      "node": "var",
+                      "name": "i",
+                      "line": 10,
+                      "col": 13,
+                      "type": "int"
+                    },
+                    "right": {
+                      "node": "int",
+                      "value": 1,
+                      "line": 10,
+                      "col": 17,
+                      "type": "int"
+                    },
+                    "line": 10,
+                    "col": 15,
+                    "type": "int"
+                  },
+                  "line": 10,
+                  "col": 9
+                }
+              ],
+              "line": 8,
+              "col": 27
+            },
+            "line": 8,
+            "col": 5
+          },
+          {
+            "node": "assert",
+            "cond": {
+              "node": "call",
+              "name": "is_sorted",
+              "args": [
+                {
+                  "node": "var",
+                  "name": "a",
+                  "line": 12,
+                  "col": 22,
+                  "type": "int[]"
+                },
+                {
+                  "node": "int",
+                  "value": 0,
+                  "line": 12,
+                  "col": 25,
+                  "type": "int"
+                },
+                {
+                  "node": "binop",
+                  "op": "-",
+                  "left": {
+                    "node": "call",
+                    "name": "length",
+                    "args": [
+                      {
+                        "node": "var",
+                        "name": "a",
+                        "line": 12,
+                        "col": 35,
+                        "type": "int[]"
+                      }
+                    ],
+                    "line": 12,
+                    "col": 28,
+                    "type": "int"
+                  },
+                  "right": {
+                    "node": "int",
+                    "value": 1,
+                    "line": 12,
+                    "col": 40,
+                    "type": "int"
+                  },
+                  "line": 12,
+                  "col": 38,
+                  "type": "int"
+                }
+              ],
+              "line": 12,
+              "col": 12,
+              "type": "bool"
+            },
+            "line": 12,
+            "col": 5
+          }
+        ],
+        "line": 5,
+        "col": 61
+      },
+      "line": 5,
+      "col": 1,
+      "locals": [
+        {
+          "name": "i",
+          "type": "int",
+          "inferred": true
+        }
+      ]
+    }
+  ]
+}

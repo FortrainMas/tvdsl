@@ -1,0 +1,23 @@
+inc(x:int) returns y:int { y = x + 1; }
+
+main(a:int[]) returns r:int uses t, c:int, arr, idx {
+    t = 1;
+    t = t + 2;
+    c = 0;
+    idx = 0;
+    arr = a;
+    arr[idx] = t;
+    fresh = arr;
+    n = length(fresh);
+    r = inc(n);
+}
+
+update(a:int[]) returns r:int uses b {
+    b[0] = 42;
+    r = b[0];
+}
+
+context() returns r:int uses t {
+    r = t + 1;
+    t = 2;
+}

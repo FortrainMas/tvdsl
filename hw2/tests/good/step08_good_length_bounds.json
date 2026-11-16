@@ -7,7 +7,9 @@
       "params": [
         {
           "name": "a",
-          "type": "int[]"
+          "type": "int[]",
+          "line": 1,
+          "col": 9
         }
       ],
       "requires": {
@@ -19,19 +21,29 @@
           "args": [
             {
               "node": "var",
-              "name": "a"
+              "name": "a",
+              "line": 1,
+              "col": 34
             }
-          ]
+          ],
+          "line": 1,
+          "col": 27
         },
         "right": {
           "node": "int",
-          "value": 0
-        }
+          "value": 0,
+          "line": 1,
+          "col": 39
+        },
+        "line": 1,
+        "col": 37
       },
       "returns": [
         {
           "name": "r",
-          "type": "int"
+          "type": "int",
+          "line": 1,
+          "col": 49
         }
       ],
       "ensures": null,
@@ -48,7 +60,9 @@
               "node": "index",
               "array": {
                 "node": "var",
-                "name": "a"
+                "name": "a",
+                "line": 2,
+                "col": 9
               },
               "index": {
                 "node": "binop",
@@ -59,19 +73,35 @@
                   "args": [
                     {
                       "node": "var",
-                      "name": "a"
+                      "name": "a",
+                      "line": 2,
+                      "col": 18
                     }
-                  ]
+                  ],
+                  "line": 2,
+                  "col": 11
                 },
                 "right": {
                   "node": "int",
-                  "value": 1
-                }
-              }
-            }
+                  "value": 1,
+                  "line": 2,
+                  "col": 23
+                },
+                "line": 2,
+                "col": 21
+              },
+              "line": 2,
+              "col": 9
+            },
+            "line": 2,
+            "col": 5
           }
-        ]
-      }
+        ],
+        "line": 1,
+        "col": 55
+      },
+      "line": 1,
+      "col": 1
     }
   ]
 }
